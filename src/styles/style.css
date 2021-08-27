@@ -1,0 +1,926 @@
+ 
+body{
+    font-family: 'Lato', sans-serif !important;
+    color: black;
+      padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+ 
+
+.default-margin{
+        margin: 0px !important;
+        padding:  0px !important;
+}
+.padding-top-medium{
+    padding-top: 10px;
+}
+.padding-top-large1{
+       margin-top: 170px !important;
+} 
+.App{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.app-secondary-bg{
+    background-color:#ED6130 !important;
+}
+.app-secondary-text{
+      color:  #00918A !important;
+} 
+ .loading-container{
+width: 100%;
+height: 100vh;
+background-color:#000000e6 ;
+ }
+ .loading-logo{
+width: 100px;
+height: 60px;
+ }
+
+
+
+
+ 
+
+ 
+
+
+                                        /**** header started started*/
+.upper-nav{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.upper-nav span{
+       color: white;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.main-nav-bar{ 
+   background-color: transparent !important;   
+}
+.main-nav-items a{
+    color: white  !important;  
+          margin-left: 33px !important; 
+    transition: .5s ease-in-out;
+}
+.main-nav-items a:after {
+	content: '';
+	display: block;
+	width: 70%;
+	height: 4px;
+	background-color:  transparent;
+}
+ 
+.main-nav-items a:hover:after {
+	content: '';
+	display: block;
+	width: 70%;
+	height: 3px;
+	background-color:  #008BFF;
+}
+ 
+  
+.main-nav-social-links a{
+      border: 2px solid white;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 2px;
+        width: 34px;
+    display: flex;
+    justify-content: center;
+}
+.main-nav-social-links-container{
+    display: flex;
+}
+.main-nav-social-links a svg{
+    width:15px;  
+}
+.navbar-toggler-icon { 
+    border: 2px solid white  !important;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+                                                /* header started ended*/
+
+     /* hero started started*/
+.hero-section{ 
+    background-image: url("../assets/imgs/png/hero/pexels-tyler-clemmensen-8376445.png");
+    background-size: cover;
+}
+.hero-text-container{
+    display: flex;
+    flex-direction: column;
+        padding-top:180px ;
+            padding-bottom: 180px;
+}
+.hero-text-container h1{
+color: white ;
+font-size: 50px;
+font-weight: 900;
+
+}
+.hero-text-container p{
+font-size: 18px;
+    color: white;
+    line-height: 19px;
+    padding-top: 17px;
+
+
+}
+.hero-btns-container{
+display: flex;
+    padding-top: 30px;
+}
+.btn-trade{
+background-color: #008BFF;
+color: white;  
+    text-decoration: none !important; 
+    padding: 10px 25px;
+    margin-right: 40px; 
+}
+
+.hero-btns-container .btn-trade{
+    text-decoration: none !important;
+    transition: .3s ease-in-out;
+
+}
+.hero-btns-container .btn-trade:hover{
+    color: #008BFF;
+    background-color: white;
+    text-decoration: none !important;
+
+}
+.btn-sell{
+background-color: white;
+text-decoration: none !important;
+color: #008BFF; 
+    text-decoration: none; 
+     padding: 10px 35px;
+    transition: .3s ease-in-out;
+}
+.btn-sell:hover{
+background-color: #008BFF;
+color: white;  
+}
+      /* hero started ended*/
+
+
+ 
+
+
+
+
+
+
+
+
+/* welcome started */
+.welcome-section{
+  padding-top:100px ; 
+}
+.welcome-text-container{
+
+}
+.welcome-text-container h6{
+      color: #263242;
+    font-size: 17px;
+    font-weight: 900;
+    padding-top: 10px;
+}
+.welcome-text-container h1{
+        font-size: 30px;
+    font-weight: 700;
+    color: #263242;
+}
+.welcome-text-container p{
+  color: #818181;
+    font-size: 14px;
+    padding-top: 9px;
+} 
+.welcome-footer-container {
+    padding-top: 30px;
+display: flex;
+width: 100%;
+flex:3
+}
+.welcome-footer-box {
+  border-right: 2px solid #818181;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+}
+
+.welcome-footer-container h2 {
+       font-size: 12px;
+    font-weight: bolder; 
+} 
+.welcome-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 1400px)
+{
+  .welcome-section  .container-xxl, .welcome-section  .container-xl, .welcome-section  .container-lg,.welcome-section  .container-md,.welcome-section .container-sm, .welcome-section  .container {
+    max-width: 1050px  !important;
+}
+}
+/* welcome ended */
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+/* get-registered-section  stared*/
+.get-registered-section{
+background-color: #005CAA;
+padding:50px 15px;
+}
+.get-registered-container{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.get-registered-container h1{
+    font-family: Sofia Pro;
+font-size: 27px;
+color: white;
+}
+.get-registered-container p{
+   font-size: 12px;
+   color: white; 
+}
+.get-registered-container a{
+      background-color: #263242;
+    color: white;
+    text-decoration: none;
+    padding: 11px 21px;
+} 
+/* get-registered-section  ended*/
+
+
+/* how we work started */
+.how-we-work-section{
+    background-color: #F1F4F9;
+    padding: 100px 0px;
+}
+.how-we-work-text-area{
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.how-we-work-text-area h6{
+    font-size: 13px;
+    font-weight: 800;
+    padding-top: 10px;
+}
+.how-we-work-text-area h1{
+color: #253141;
+font-size: 31px;
+    font-weight: 900;
+}
+.how-we-work-cards-area{
+    display: flex;
+justify-content: center;
+align-items: center; 
+flex-direction: column;
+    padding: 0px 100px !important;
+}
+.how-we-work-card{
+     display: flex;
+justify-content: center;
+align-items: center; 
+flex-direction: column;
+}
+.how-we-work-card h1{
+    font-size: 13px;
+    color:#263242;
+    font-weight:bold
+
+}
+.how-we-work-card p{
+
+    color:#656565;
+    font-size: 10px;
+    font-weight: 700;
+}
+/* how we work ended */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* buy or sell setarted */
+.buy-sell-section{
+padding: 100px 0px;
+}
+.buy-sell-container{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.buy-card{
+     background-color:#253242;
+clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 11% 100%, 0% 80%, 0 0);
+    max-width: 397px !important;
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+        height: 222px;
+    flex-direction: column;
+}
+.sell-card{
+     /* background-image: url(../assets/imgs/png/buyOrSellCard/Subtraction\ 5.png); */
+    background-color: #005DAB;
+    max-width: 397px !important; margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    flex-direction: column;
+    height: 222px;
+clip-path: polygon(20% 0%, 89% 0%, 100% 20%, 100% 80%, 100% 100%, 10% 100%, 0 100%, 0 0);
+}
+.tr-heading{
+color: white;
+font-size: 18px;
+    font-weight: bolder;
+}
+.tr-sub-heading{
+color: white;
+font-size: 10px;
+margin-top: 20px;
+    padding-bottom: 37px;
+text-decoration: underline;
+}
+/* buy or sell ended  */
+
+
+
+
+
+
+
+
+
+
+/* new cars setarted */
+.new-cars-section{
+padding:50px 0px;
+}
+.new-cars-section .container-fluid{
+    padding: unset  !important;
+}
+  
+.new-car-card-full{
+   height: 357px ;
+   
+    background-size: cover  !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  padding: 11px 53px !important;  
+        /* padding: 194px 40px 18px 40px !important; */
+
+}
+ .new-badge{
+background-color: #008BFF;
+color: white; 
+display: flex;
+justify-content: center;
+align-items: center;
+    width: 50px;
+    height: 30px;
+    
+ }
+ .new-car-card-full h1{
+font-size: 35px;
+color: white;
+font-weight: 800;
+overflow: hidden;
+padding-top: 25px;
+ }
+  .new-card-list{  
+     padding-top: 15px; 
+ }
+ .new-card-list-item{
+     color: white;
+     font-size: 9px; 
+   
+ }
+ .border-right{
+        border-right: 3px solid white;
+        padding:0px 10px;  
+ }
+/* new cars ended */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* customer Review Section */
+.customer-review-section{
+padding: 50px 10px;
+}
+ 
+.customer-review-card{
+
+}
+.customer-review-message-container{ 
+clip-path: polygon(20% 0%, 100% 1%, 100% 83%, 85% 84%, 74% 100%, 75% 83%, 0 83%, 0 0);
+ 
+}
+.customer-review-message-container p{
+    font-family: Merriweather;
+    font-weight: 400;
+    font-style: italic;
+    color: white;
+  
+    padding: 30px 30px 60px 33px;
+
+    
+}
+.customer-review-name-container h4 {
+font-size: 18px;
+    margin-right: 10px;
+}
+.customer-review-name-container h6 {
+font-size: 11px;
+}
+.customer-review-name-container h3{
+
+}
+.customer-avatar{
+max-height: 40px;
+    max-width: 40px;
+}
+/* customer Review Section ended */
+
+
+
+
+
+
+
+
+/* NewsAndArticals started */
+.news-and-articals-section{
+padding: 100px 10px;
+}
+.news-and-articals-section-cards-container{
+        /* padding: 80px; */
+}
+.news-and-articals-section-card{
+    padding: 30px !important;
+}
+.artical-image{
+padding: unset  !important;
+}
+.date  {
+color: #263242;
+font-size: 9px;
+border-right: 2px solid #263242 ;
+    font-weight: 600;
+}
+.posted-by{
+color: #263242;
+font-size: 9px;
+    font-weight: 600;
+}
+.news-and-articals-section-card h3{
+    color: #263242; 
+    font-weight: 800;
+} 
+.news-and-articals-section-card p{
+color: #92999F;
+    font-size: 12px;
+}
+.artical-card-footer a{
+    font-weight: 500;
+    color:#263242 !important;
+}
+.artical-card-footer span{
+font-size:9px ;
+}
+
+@media (min-width: 1400px)
+{
+  .news-and-articals-section  .container-xxl, .news-and-articals-section  .container-xl, .news-and-articals-section  .container-lg, .news-and-articals-section  .container-md, .news-and-articals-section .container-sm, .news-and-articals-section  .container {
+    max-width: 1050px  !important;
+}
+}
+/* NewsAndArticals ended */
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+/* footer started*/
+.footer-container{
+    background-color: #111820;
+    color: white;
+    padding: 91px 0px !important;
+}
+.footer-social-links a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer-text-area{ 
+}
+.footer-text-area-column-1{
+color: #92999F;
+font-size: 12px;
+}
+
+.footer-text-area-column-1 p{
+
+}
+.footer-text-area-column-1 span{
+font-size: 13px;
+}
+.footer-phone-number{
+        font-size: 17px  !important; 
+}
+.footer-text-area-column-2{
+
+}
+.footer-text-area-column-2 h5{
+    font-size: 14px;
+}
+.footer-text-area-column-2 a{
+font-size: 13px;
+    text-decoration: none;
+    color: #92999F !important;
+}
+.footer-text-area-column-3{
+
+}
+.footer-text-area-column-3 h5{
+    font-size: 14px;
+}
+.footer-text-area-column-3 a{
+font-size: 13px;
+    text-decoration: none;
+    color: #92999F !important;
+}
+.footer-text-area-column-4{
+
+}
+.footer-text-area-column-4 h5{
+    font-size: 14px;
+}
+.footer-text-area-column-4 p{
+    padding-top: 10px;
+ color: #92999F;
+font-size: 12px;
+}
+.news-letter-input{
+    height: 43px;
+}
+.btn-newsletter{
+    background-color: #005CAA; 
+    color: white;
+    width: 137px;
+    padding: 8px;
+    margin-top: 9px;
+} 
+@media (min-width: 1400px)
+{
+   .footer-container  .container-xxl, .footer-container  .container-xl, .footer-container  .container-lg, .footer-container  .container-md, .footer-container  .container-sm, .footer-container  .container {
+    max-width: 1050px  !important;
+}
+}
+/* footer ended */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LOGIN Page Started */
+
+ .section-t-b-padding{
+     padding: 115px 0px 200px 0px   !important;
+ }
+ 
+
+  
+.login-hero-section{ 
+    background-image: url("../assets/imgs/png/login/loginHero.png");
+    background-size: cover;
+    color: white;
+}
+.login-hero-container{
+      padding: 70px 50px;  
+            align-items: center;
+}
+ .ts-input{
+     background-color: #00000096 !important;
+ }
+.ts-btn{
+background-color: #3AB3F8;
+color: white;  
+    text-decoration: none !important; 
+    width: 100% !important;
+}
+ 
+.login-hero-container{
+    background-color: #00000070;
+    
+}
+ 
+.ts-bbg-text-color{
+color: white !important;
+font-size: 13px;
+}
+ 
+/* Login Page ended */
+
+
+
+
+
+/* Registration Page Started */
+
+
+  .section-registration-t-b-padding{
+   padding: 50px 0px 120px 0px !important;
+  } 
+.registration-hero-section{ 
+    background-image: url("../assets/imgs/png/login/registration.png");
+    background-size: cover;
+    color: white;
+}
+ 
+ 
+/* Registration Page ended */
+
+
+
+
+
+/* Contact us Page Started */
+
+
+  .section-contact-t-b-padding{
+   padding: 70px 0px 220px 0px !important;
+  } 
+  .registration-hero-section h1{
+          font-weight: 600;
+  }
+.contact-hero-section{ 
+    background-image: url("../assets/imgs/png/login/Contactusbg.png");
+    background-size: cover;
+    color: white;
+}
+  .text-area h2{
+             font-size: 50px;
+    font-weight: 600;
+ }
+ .text-area p{
+          width: 295px;
+      font-size: 12px;
+ }
+ .margin-top-medium{
+         margin-top: 97px;
+ }
+/* Contact us Page ended */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+/* Responsivness */
+
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 1052px) {
+ 
+
+
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+ 
+ /* welcome started */
+ .welcome-img-boy{
+    max-width: 300px;
+}
+  /* how we work started */
+ .how-we-work-cards-area{
+  padding: 0px 50px   !important;   
+ }
+ /* welcome ended */
+
+ /* contact us started */
+   .contact-us-text h2{
+             font-size: 25px;
+    font-weight: 600;
+ }
+  
+ /* contact us ended */
+
+}
+ 
+
+
+
+
+
+
+
+@media only screen and (min-width: 375px) and (max-width: 425px) { 
+ /* hero section started */ 
+ .hero-text-container{ 
+        padding-top: 100px ;
+            padding-bottom:  80px;
+}
+.btn-trade { 
+      padding: 7px 11px;
+    margin-right: 42px;
+}
+.btn-sell{ 
+       padding: 8px 21px;
+}
+/* hero ended */
+ /* welcome started */
+ .welcome-img-boy{
+    max-width: 300px;
+}
+ /* welcome ended */
+
+ /* how we work started */
+ .how-we-work-cards-area{
+  padding: 0px 80px   !important;   
+ }
+ /* how we work ened e */
+   /* how we work started */
+ .how-we-work-cards-area{
+  padding: 0px 50px   !important;   
+ }
+  /* contact us started */
+   .contact-us-text h2{
+             font-size: 25px;
+    font-weight: 600;
+ }
+ 
+ /* contact us ended */
+}
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+    .hero-text-container{ 
+        padding-top: 100px ;
+            padding-bottom:  80px;
+}
+.btn-trade { 
+     padding: 7px 11px;
+    margin-right: 42px;
+}
+.btn-sell{ 
+       padding: 8px 21px;
+}
+/* hero ended */
+ /* welcome started */
+ .welcome-img-boy{
+    max-width: 300px   !important;
+}
+  /* how we work started */
+ .how-we-work-cards-area{
+  padding: 0px 50px   !important;   
+ }
+ /* how we work ened e */
+
+  /* contact us started */
+   .contact-us-text h2{
+             font-size: 25px;
+    font-weight: 600;
+ }
+ 
+ /* contact us ended */
+}
+
+ 
+
+
+
+@media only screen and (min-width: 319px) and (max-width: 374px) { 
+ 
+}
+ 
