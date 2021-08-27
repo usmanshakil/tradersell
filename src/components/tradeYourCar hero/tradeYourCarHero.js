@@ -1,13 +1,61 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
 import NavBar from '../../views/_partials/navbar';
-import { Link } from "react-router-dom"
-import Logo from "../../assets/imgs/png/nav/logo.png"
+import Step1 from "../../assets/imgs/png/tradeSteps/1.png"
+import Step2 from "../../assets/imgs/png/tradeSteps/2.png"
+import Step3 from "../../assets/imgs/png/tradeSteps/3.png"
+import Step4 from "../../assets/imgs/png/tradeSteps/4.png"
+import Step5 from "../../assets/imgs/png/tradeSteps/5.png"
+import Step6 from "../../assets/imgs/png/tradeSteps/6.png"
 class TradeYourCarHero extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            step: 1,
+            vehicle: '',
+            drivetrain: '',
+            engine: '',
+            year: 0,
+            make: '',
+            model: 0,
+            state: '',
+            city: '',
+            zipCode: 0,
+            phone: 0,
+
+        }
+    }
+    handleNextStep = (e) => {
+        // const dataobject = {
+        //     vehicle: this.state.vehicle,
+        //     drivetrain: this.state,
+        //     engine: this.state.drivetrain,
+        //     year: this.state.year,
+        //     make: this.state.make,
+        //     model: this.state.model,
+        //     state: this.state.state,
+        //     city: this.state.city,
+        //     zipCode: this.state.zipCode,
+        //     phone: this.state.phone,
+        // }
+        // alert(JSON.stringify(dataobject))
+        e.preventDefault();
+        this.setState({ step: this.state.step + 1 })
+    }
+    handlePreviousStep = (e) => {
+        e.preventDefault();
+        this.setState({ step: this.state.step - 1 })
+    }
+    handleFinalSubmit = (e) => {
+        e.preventDefault();
+        this.setState({ step: 1 })
+        alert("values Submitted")
+    }
 
     render() {
+
         return (
             <div className="contact-hero-section">
                 <NavBar />
@@ -18,92 +66,648 @@ class TradeYourCarHero extends Component {
                             <p>Whether your trading-in or selling let us help you get the most value from your current vehicle. </p>
                         </Col>
                         <Col lg={8} md={12} sm={12}>
-                            <Form className="login-hero-container margin-top-medium">
+                            <div className="login-hero-container margin-top-medium">
                                 <div className="d-flex justify-content-center algin-center mb-4">
-                                    <h1>Car Informaition  </h1>
+                                    <h1>Car Information  </h1>
                                 </div>
-
-                                <Row className="   ">
-                                    <Col lg={12} md={12} sm={12}>
-                                        Steps
-                                    </Col>
+                                {/* step 1  Main Info started */}
+                                {this.state.step === 1 ?
+                                    <Form onSubmit={(e) => { this.handleNextStep(e) }}>
 
 
-                                    <Col lg={6} md={12} sm={12}>
-                                        <Form.Group className="mb-3" controlId="Vehicle">
-                                            <Form.Control className="ts-input" type="text" placeholder="  Vehicle VIN(Minimum 17 characters)*  " />
-                                        </Form.Group>
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step1} className="  " alt="steps" />
+                                            </Col>
 
-                                    </Col>
-                                    <Col lg={6} md={12} sm={12}>
 
-                                        <Form.Group className="mb-3" controlId="Drivetrain">
-                                            <Form.Control className="ts-input" type="text" placeholder=" Drivetrain*  " />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Vehicle">
+                                                    <Form.Control className="ts-input" type="text" value={this.state.vehicle} onChange={(e) => this.setState({ vehicle: e.target.value })} name="vehicle" placeholder="  Vehicle VIN(Minimum 17 characters)*  " />
+                                                </Form.Group>
 
-                                <Row className="  ">
-                                    <Col lg={6} md={12} sm={12}>
-                                        <Form.Group className="mb-3" controlId="Engine">
-                                            <Form.Control className="ts-input" type="text" placeholder="   Engine*" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col lg={6} md={12} sm={12}>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
 
-                                        <Form.Group className="mb-3" controlId="year">
-                                            <Form.Control className="ts-input" type="text" placeholder="    Year*  " />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                                <Form.Group className="mb-3" controlId="Drivetrain">
+                                                    <Form.Control className="ts-input" type="text" value={this.state.drivetrain} onChange={(e) => this.setState({ drivetrain: e.target.value })} name='drivetrain' placeholder=" Drivetrain*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
 
-                                <Row className="  ">
-                                    <Col lg={6} md={12} sm={12}>
-                                        <Form.Group className="mb-3" controlId="Engine">
-                                            <Form.Control className="ts-input" type="text" placeholder="   Make*" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col lg={6} md={12} sm={12}>
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Engine">
+                                                    <Form.Control className="ts-input" name="engine" value={this.state.engine} onChange={(e) => this.setState({ engine: e.target.value })} type="text" placeholder="   Engine*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
 
-                                        <Form.Group className="mb-3" controlId="year">
-                                            <Form.Control className="ts-input" type="text" placeholder="    Model*  " />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                                <Form.Group className="mb-3" controlId="year">
+                                                    <Form.Control className="ts-input" name={"year"} value={this.state.year} onChange={(e) => this.setState({ year: e.target.value })} type="number" placeholder="    Year*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
 
-                                <Row className="  ">
-                                    <Col lg={6} md={12} sm={12}>
-                                        <Form.Group className="mb-3" controlId="Engine">
-                                            <Form.Control className="ts-input" type="text" placeholder="   State*" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col lg={6} md={12} sm={12}>
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Make">
+                                                    <Form.Control className="ts-input" name="make" value={this.state.make} onChange={(e) => this.setState({ make: e.target.value })} type="text" placeholder="   Make*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
 
-                                        <Form.Group className="mb-3" controlId="year">
-                                            <Form.Control className="ts-input" type="text" placeholder="    City*  " />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row className="  ">
-                                    <Col lg={6} md={12} sm={12}>
-                                        <Form.Group className="mb-3" controlId="Engine">
-                                            <Form.Control className="ts-input" type="text" placeholder="   Zip Code *" />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Model">
+                                                    <Form.Control className="ts-input" name="model" value={this.state.model} onChange={(e) => this.setState({ model: e.target.value })} type="number" placeholder="    Model*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
 
-                                        <Form.Group className="mb-3" controlId="year">
-                                            <Form.Control className="ts-input" type="text" placeholder="    Phone*  " />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="State">
+                                                    <Form.Control className="ts-input" name="state" value={this.state.state} onChange={(e) => this.setState({ state: e.target.value })} type="text" placeholder="   State*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
 
-                                <div className="  justify-content-center algin-center mt-4 ">
-                                    <Button className="ts-btn" variant="primary" type="submit">
-                                        Send
+                                                <Form.Group className="mb-3" controlId="City">
+                                                    <Form.Control className="ts-input" name="city" value={this.state.city} onChange={(e) => this.setState({ city: e.target.value })} type="text" placeholder="    City*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Zip Code">
+                                                    <Form.Control className="ts-input" name="zipCode" value={this.state.zipCode} onChange={(e) => this.setState({ zipCode: e.target.value })} type="number" placeholder="   Zip Code *" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Phone">
+                                                    <Form.Control className="ts-input" type="number" value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} name="phone" placeholder="    Phone*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+
+                                            <Button className="btn-next" variant="primary" type="submit">
+                                                Next
                                  </Button>
-                                </div>
-                            </Form>
+                                        </div>
+                                        {/* step 1 Main Info  started ended */}
+
+                                    </Form>
+                                    : ""}
+                                {/* step 1  Main Info ended */}
+
+
+
+
+
+                                {/* step 2 Additional Info started */}
+                                {this.state.step === 2 ?
+                                    <Form onSubmit={this.handleNextStep}>
+
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step2} className="  " alt="steps" />
+                                            </Col>
+
+
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Odometer">
+                                                    <Form.Control className="ts-input" type="text" placeholder="Odometer*  " />
+                                                </Form.Group>
+
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Transmission">
+                                                    <Form.Control className="ts-input" type="text" placeholder=" Transmission* " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Trim">
+                                                    <Form.Control className="ts-input" type="text" placeholder="  Trim*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Fuel Type">
+                                                    <Form.Control className="ts-input" type="number" placeholder="  Fuel Type*  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Body Type">
+                                                    <Form.Control className="ts-input" type="text" placeholder=" Body Type*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="  Condition*">
+                                                        <option> Condition*</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Exterior Color">
+                                                    <Form.Control className="ts-input" type="text" placeholder="   Exterior Color*" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Primary Photo">
+                                                    <Form.Control className="ts-input" type="file" placeholder="  Primary Photo " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row className="  ">
+                                            <Col lg={12} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId=" Additional Photos">
+                                                    <Form.Control className="ts-input" type="file" placeholder="   Additional Photos*" />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+                                            <Button onClick={(e) => this.handlePreviousStep(e)} className="btn-back" variant="primary"  >
+                                                Back
+                                 </Button>
+                                            <Button className="btn-next btn-margin-left" variant="primary" type="submit">
+                                                Next
+                                 </Button>
+                                        </div>
+                                    </Form>
+                                    : ""}
+                                {/* step 2  Additional Info started ended */}
+
+
+
+
+
+                                {/* step 3  Driveability started */}
+                                {this.state.step === 3 ?
+                                    <Form onSubmit={this.handleNextStep}>
+
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step3} className="  " alt="steps" />
+                                            </Col>
+
+
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Vehicle Driving* ">
+                                                        <option> Vehicle Driving</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Vehicle Driving*">
+                                                        <option>Vehicle Driving</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Drivetrain Issue* ">
+                                                        <option> Drivetrain Issue</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Steering Issue* ">
+                                                        <option>Steering Issue</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Brake Issue* ">
+                                                        <option> Brake Issue</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Brake Issue* ">
+                                                        <option> Brake Issue</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+
+
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+                                            <Button onClick={(e) => this.handlePreviousStep(e)} className="btn-back" variant="primary"  >
+                                                Back
+                                 </Button>
+                                            <Button className="btn-next btn-margin-left" variant="primary" type="submit">
+                                                Next
+                                 </Button>
+                                        </div>
+                                    </Form>
+                                    : ""}
+                                {/* step 3 Driveability   started ended */}
+
+
+
+
+
+
+                                {/* step 4  Exterior started */}
+                                {this.state.step === 4 ?
+                                    <Form onSubmit={this.handleNextStep}>
+
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step4} className="  " alt="steps" />
+                                            </Col>
+
+
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Minor Body Damage* ">
+                                                        <option> Minor Body Damage  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue=" Moderate Body Damage*">
+                                                        <option>Moderate Body Damage*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Major Body Damage* ">
+                                                        <option> Major Body Damage*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue=" Scratches* ">
+                                                        <option>Scratches*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Glass Damaged Cracked* ">
+                                                        <option> Glass Damaged Cracked*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Lights Damaged Cracked* ">
+                                                        <option> Lights Damaged Cracked*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Minor Body Rust* ">
+                                                        <option> Minor Body Rust*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Moderate Body Rust* ">
+                                                        <option> Moderate Body Rust*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Moderate Body Rust* ">
+                                                        <option>Moderate Body Rust* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Major Body Rust* ">
+                                                        <option> Major Body Rust* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row><Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Aftermarket Parts Exterior*   ">
+                                                        <option> Aftermarket Parts Exterior*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Previous Paint Work* ">
+                                                        <option>Previous Paint Work*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row><Row className="  ">
+                                            <Col lg={12} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Previous Paint Work*  ">
+                                                        <option> Previous Paint Work* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+
+
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+                                            <Button onClick={(e) => this.handlePreviousStep(e)} className="btn-back" variant="primary"  >
+                                                Back
+                                 </Button>
+                                            <Button className="btn-next btn-margin-left" variant="primary" type="submit">
+                                                Next
+                                 </Button>
+                                        </div>
+                                    </Form>
+                                    : ""}
+                                {/* step 4 Exterior   started ended */}
+
+
+
+
+
+
+                                {/* step 5  Interior started */}
+                                {this.state.step === 5 ?
+                                    <Form onSubmit={this.handleNextStep}>
+
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step5} className="  " alt="steps" />
+                                            </Col>
+
+
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Seat Damage* ">
+                                                        <option>Seat Damage*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Carpet Damage*">
+                                                        <option>Carpet Damage* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Dashboard Damage* ">
+                                                        <option> Dashboard Damage* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue=" Interior Trim Damage* ">
+                                                        <option>Interior Trim Damage* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Sunroof* ">
+                                                        <option>Sunroof*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Navigation* ">
+                                                        <option> Navigation*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Aftermarket Stereo Equipment*">
+                                                        <option> Aftermarket Stereo Equipment*  </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Hvac Not Working* ">
+                                                        <option> Hvac Not Working* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row className="  ">
+                                            <Col lg={12} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Moderate Body Rust* ">
+                                                        <option>Leather Or Leather Type Seats* </option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+
+
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+                                            <Button onClick={(e) => this.handlePreviousStep(e)} className="btn-back" variant="primary"  >
+                                                Back
+                                 </Button>
+                                            <Button className="btn-next btn-margin-left" variant="primary" type="submit">
+                                                Next
+                                 </Button>
+                                        </div>
+                                    </Form>
+                                    : ""}
+                                {/* step 5 Interior   started ended */}
+
+
+
+
+
+                                {/* step 6   Final Details started */}
+                                {this.state.step === 6 ?
+                                    <Form onSubmit={this.handleFinalSubmit}>
+
+                                        <Row className="   ">
+                                            <Col className="d-flex justify-content-center align-items-center steps-row-image" lg={12} md={12} sm={12}>
+                                                <img src={Step6} className="  " alt="steps" />
+                                            </Col>
+                                        </Row>
+                                        <Row className="   ">
+                                            <Col lg={12} md={12} sm={12}>
+                                                <h6 className="form-subheading">Are you shopping for another car?</h6>
+                                                <p className="form-small-text">If so, tell us about the car you're considering. This helps us match you with the best dealer for a trade-in.</p>
+                                            </Col>
+                                        </Row>
+                                        <Row className="   ">
+
+
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Vehicle">
+                                                    <Form.Control className="ts-input" type="text" placeholder="Make  " />
+                                                </Form.Group>
+
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+
+                                                <Form.Group className="mb-3" controlId="Modal">
+                                                    <Form.Control className="ts-input" type="text" placeholder="Modal  " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row className="   ">
+                                            <Col lg={12} md={12} sm={12}>
+                                                <h6>What distance are you willing to sell your car in?</h6>
+                                            </Col>
+                                            <Col lg={12} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="formGridState">
+                                                    <Form.Select className="ts-input" defaultValue="Radius ">
+                                                        <option> Radius</option>
+                                                        <option>...</option>
+                                                    </Form.Select>
+                                                </Form.Group>
+                                            </Col>
+                                            <h6>Create Your Account</h6>
+                                            <Form.Group className="mb-3" controlId="Vehicle">
+                                                <Form.Control className="ts-input" type="text" placeholder="UserName  " />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="Vehicle">
+                                                <Form.Control className="ts-input" type="email" placeholder="Email  " />
+                                            </Form.Group>
+                                        </Row>
+
+
+
+
+
+                                        <Row className="  ">
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Vehicle">
+                                                    <Form.Control className="ts-input" type="password" placeholder="Password  " />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col lg={6} md={12} sm={12}>
+                                                <Form.Group className="mb-3" controlId="Vehicle">
+                                                    <Form.Control className="ts-input" type="password" placeholder="Confirm Password " />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <div className="d-flex  justify-content-center algin-items-center mt-4 ">
+                                            <Button onClick={(e) => this.handlePreviousStep(e)} className="btn-back" variant="primary"  >
+                                                Back
+                                 </Button>
+                                            <Button className="btn-next btn-margin-left" variant="primary" type="submit">
+                                                Next
+                                 </Button>
+                                        </div>
+                                    </Form>
+                                    : ""}
+                                {/* step 6 Final Details   started ended */}
+                            </div>
                         </Col>
                     </Row>
                 </Container>

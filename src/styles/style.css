@@ -706,7 +706,7 @@ font-size: 12px;
 }
  .ts-input{
      background-color: #00000096 !important;
- }
+ } 
 .ts-btn{
 background-color: #3AB3F8;
 color: white;  
@@ -781,8 +781,77 @@ font-size: 13px;
 
 
 
+/* Trade your card startd */
+ 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #00918A !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #00918A !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #00918A !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #00918A !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #00918A !important;
+}
 
+::placeholder { /* Most modern browsers support this now. */
+    color:    #00918A !important;
+}
 
+ 
+.btn-back{
+background-color: white  !important;
+text-decoration: none !important;
+color: #008BFF !important; 
+    text-decoration: none; 
+     padding: 10px 35px  !important;
+    transition: .3s ease-in-out;
+}
+.btn-back:hover{
+background-color: #008BFF !important;
+color: white !important;  
+}
+.btn-next{
+background-color:  #008BFF !important;
+text-decoration: none !important;
+color: white  !important; 
+    text-decoration: none; 
+     padding: 10px 35px  !important;
+     margin-left: 5px;
+    transition: .3s ease-in-out;
+}
+.btn-next:hover{
+background-color:white !important;
+color:  #008BFF !important;  
+}
+.btn-margin-left{
+        margin-left: 50px;
+}
+.form-select {
+   
+    background-size: 20px 33px !important;
+     
+}
+ .form-subheading{
+font-size: 17px;
+ }
+ .form-small-text{
+font-size: 12px;
+ }
+ .steps-row-image{
+       padding: 33px 40px 60px 40px !important;
+ }
+ .steps-row-image img{
+             width: 100% !important;
+ }
+/* Trase your card ended */
 
 
 
@@ -808,9 +877,11 @@ font-size: 13px;
 
 
 
-@media only screen and (min-width: 769px) and (max-width: 1052px) {
+@media only screen and (min-width: 768px) and (max-width: 1052px) {
  
-
+  .steps-row-image img{
+             width: 100% !important;
+ }
 
 }
 @media only screen and (min-width: 425px) and (max-width: 768px) {
@@ -832,6 +903,14 @@ font-size: 13px;
  }
   
  /* contact us ended */
+ /* trade car started */
+  .steps-row-image img{
+             max-width: 370px !important;
+ }
+ .steps-row-image{
+       padding: 33px 10px 60px 10px !important;
+ }
+  /* trade car ended */
 
 }
  
@@ -878,6 +957,16 @@ font-size: 13px;
  }
  
  /* contact us ended */
+ /* trade car started */
+  .steps-row-image img{
+             
+    width: 244px !important;
+
+ }
+  .steps-row-image{
+       padding: 33px 10px 60px 10px !important;
+ }
+  /* trade car ended */
 }
 
 
@@ -914,6 +1003,16 @@ font-size: 13px;
  }
  
  /* contact us ended */
+ /* trade car started */
+  .steps-row-image img{
+           
+    width: 244px !important;
+
+ }
+  .steps-row-image{
+       padding: 33px 10px 60px 10px !important;
+ }
+  /* trade car ended */
 }
 
  
