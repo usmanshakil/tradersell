@@ -17,7 +17,7 @@ class AppRouter extends React.Component {
                     <Route exact path="/register" component={Registration} />
                     <Route exact path="/contactus" component={Contactus} />
                     <Route exact path="/trade-your-car" component={TradeYourCar} />
-                    <Route exact path="/Sell-your-car" component={Home} />
+                    <Route exact path="/Sell-your-car" component={SellYourCar} />
                 </Switch>
             </Router>
         );

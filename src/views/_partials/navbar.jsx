@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/imgs/png/nav/logo.png";
 // import Circle from "../assets/imgs/App Icon/JPG/circle.jpg";
+import { ReactComponent as Logo } from "../../assets/imgs/svgs/nav/1615889129-78426.svg";
 import * as Icon from 'react-feather';
 const NavBar = () => {
     // const { addSideBarClass, setAddSideBarClass } = useContext(Context);
@@ -18,7 +19,10 @@ const NavBar = () => {
             </div>
             <Navbar collapseOnSelect expand="lg"   >
                 <Container>
-                    <Link className="navbar-brand" to="/" ><img src={LOGO} alt="logo" /> </Link>
+                    <Link className="navbar-brand" to="/" >
+                        {/* <img className="logo" src={LOGO} alt="logo" /> */}
+                        <Logo className="logo" />
+                    </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

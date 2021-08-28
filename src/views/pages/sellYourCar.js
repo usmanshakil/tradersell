@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
-import ContactUsHero from '../../components/contactushero/contactUsHero';
+import SellYourCarHero from '../../components/sellYourCar hero/sellYourCarHero';
 class SellYourCar extends Component {
   render() {
     console.log(this.props.vouched)
     return (
       <React.Fragment>
-        <ContactUsHero />
+        <SellYourCarHero />
         <GetRegistered />
         <Footer />
       </React.Fragment>
