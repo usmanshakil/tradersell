@@ -1,5 +1,5 @@
 
-import 'bootstrap-css-only/css/bootstrap.min.css';
+import './styles/bootstrap.css';
 import './styles/style.css';
 import reportWebVitals from './reportWebVitals';
 import React, { Suspense, lazy } from 'react';
