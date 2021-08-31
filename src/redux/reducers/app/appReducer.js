@@ -17,6 +17,7 @@ import {
   ALL_CLEAR,
   FOLLOWING,
   VOUCHED,
+  ALERT
 } from '../../actions/app/appActions';
 
 const initialState = {
@@ -36,7 +37,8 @@ const initialState = {
   Tags: [],
   clear: false,
   following: false,
-  vouched: 'danish',
+  vouched: 'test',
+  alert: { showAlert: false, alertMessage: "", alertType: "Success" }
 };
 const app = (state = initialState, action) => {
   switch (action.type) {
@@ -54,6 +56,11 @@ const app = (state = initialState, action) => {
       return {
         ...state,
         user: action.value,
+      };
+    case ALERT:
+      return {
+        ...state,
+        alert: action.alert,
       };
     case UPDATE:
       return {

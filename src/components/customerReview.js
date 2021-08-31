@@ -70,7 +70,7 @@ class CustomerReview extends Component {
                 <Container>
                     <Row>
                         <Col className="how-we-work-text-area" lg={12} md={12} sm={12}>
-                            <h1>Customer Review          </h1>
+                            <h1>  Customer  <h1 className="d-inline trader-sell-text">Review  </h1>     </h1>
                         </Col>
                         <Col className="mt-5" lg={12} md={12} sm={12}>
                             <Row>

@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Image, FormControl, Spinner } from "react-bootstrap";
+import InputGroup from 'react-bootstrap/InputGroup'
 import NavBar from '../../views/_partials/navbar';
 import Step1 from "../../assets/imgs/png/tradeSteps/1.png"
 import Step2 from "../../assets/imgs/png/tradeSteps/2.png"
@@ -9,6 +10,10 @@ import Step3 from "../../assets/imgs/png/tradeSteps/3.png"
 import Step4 from "../../assets/imgs/png/tradeSteps/4.png"
 import Step5 from "../../assets/imgs/png/tradeSteps/5.png"
 import Step6 from "../../assets/imgs/png/tradeSteps/6.png"
+import APIConfig from '../../helpers/api/config';
+import { toast } from "react-toastify";
+import axios from "axios"
+import { validateSingleField } from '../../helpers/validation'; 
 class TradeYourCarHero extends Component {
     constructor(props) {
         super(props)
@@ -24,10 +29,14 @@ class TradeYourCarHero extends Component {
             city: '',
             zipCode: 0,
             phone: 0,
+            // vin: "5UXKU2C54J0X48668",
+            vin: "",
+            loading: false
 
         }
     }
     handleNextStep = (e) => {
+       
         // const dataobject = {
         //     vehicle: this.state.vehicle,
         //     drivetrain: this.state,
@@ -42,7 +51,18 @@ class TradeYourCarHero extends Component {
         // }
         // alert(JSON.stringify(dataobject))
         e.preventDefault();
-        this.setState({ step: this.state.step + 1 })
+        if (this.props.user?.isLogin) {
+
+            this.setState({ step: this.state.step + 1 })
+        }
+        else {
+            toast.warning("Please login before proceed .", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 1800,
+            });
+            this.props.history.push("/login")
+        }
+        
     }
     handlePreviousStep = (e) => {
         e.preventDefault();
@@ -53,7 +73,47 @@ class TradeYourCarHero extends Component {
         this.setState({ step: 1 })
         alert("values Submitted")
     }
+    getVINData = async () => { 
+        if (this.props.user?.isLogin ) {
+           if(validateSingleField(this.state.vin)){
+            this.setState({ loading: true })
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('vin', this.state.vin);
+            try {
+                const response = await axios(APIConfig('post', '/check_vin', data));
+                if (response.status === 200) {
+                    toast.success("Data has been fetched successfully", {
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 1000,
+                    });
+                    this.setState({ loading: false })
+                    // this.props.history.push('/trade-your-car') 
+                }
+            } catch (error) {
+                toast.error("Vin is incorrect please try again ", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1800,
+                });
+                this.setState({ loading: false })
+            } 
+           }
+           else{
+            toast.warning("Please fill VIN number before proceed.", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 1800,
+            }); 
+           }
+        } else {
+            toast.warning("Please login before proceed .", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 1800,
+            });
+            this.props.history.push("/login")
+        }
 
+    }
+ 
     render() {
 
         return (
@@ -81,11 +141,23 @@ class TradeYourCarHero extends Component {
                                             </Col>
 
 
-                                            <Col lg={6} md={12} sm={12}>
-                                                <Form.Group className="mb-3" controlId="Vehicle">
-                                                    <Form.Control className="ts-input" type="text" value={this.state.vehicle} onChange={(e) => this.setState({ vehicle: e.target.value })} name="vehicle" placeholder="  Vehicle VIN(Minimum 17 characters)*  " />
-                                                </Form.Group>
+                                            <Col lg={6} md={12} sm={12}> 
+                                                <InputGroup className="mb-3">
+                                                    <FormControl
+                                                        type="text" required value={this.state.vin} onChange={(e) => this.setState({ vin: e.target.value })} name="vin" placeholder="  Vehicle VIN(Minimum 17 characters)*  "
 
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2"
+                                                        className="ts-input"
+                                                    />
+                                                    {!this.state.loading ? <Button onClick={() => this.getVINData()} variant=" btn-start outline-secondary" id="button-addon2">
+                                                        Start
+                                                      </Button>
+                                                        :
+                                                        <Button disabled className="btn-start" variant="primary" type="submit">
+                                                            <Spinner animation="grow" variant="dark" size="sm" />
+                                                        </Button>}
+                                                </InputGroup>
                                             </Col>
                                             <Col lg={6} md={12} sm={12}>
 
@@ -152,9 +224,14 @@ class TradeYourCarHero extends Component {
 
                                         <div className="d-flex  justify-content-center algin-items-center mt-4 ">
 
-                                            <Button className="btn-next" variant="primary" type="submit">
-                                                Next
-                                 </Button>
+
+                                            {!this.state.loading ? <Button type="submit" variant=" btn-next" id="button-addon2a">
+                                                Start
+                                                      </Button>
+                                                : <Button disabled className="btn-next" variant="primary"  >
+                                                    <Spinner animation="grow" variant="dark" size="sm" />
+                                                </Button>
+                                            }
                                         </div>
                                         {/* step 1 Main Info  started ended */}
 
@@ -718,7 +795,7 @@ class TradeYourCarHero extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        vouched: state.app.vouched
+        user: state.app.user
     };
 };
 const mapDispatchToProps = (dispatch) => {

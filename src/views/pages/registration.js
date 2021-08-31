@@ -5,13 +5,17 @@ import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
 import Registrationhero from '../../components/Registration hero/Registrationhero';
 class Registration extends Component {
+  constructor(props) {
+    super(props)
+
+  }
   render() {
     console.log(this.props.vouched)
     return (
       <React.Fragment>
-        <Registrationhero />
-        <GetRegistered />
-        <Footer />
+        <Registrationhero  {...this.props} />
+        <GetRegistered  {...this.props} />
+        <Footer  {...this.props} />
       </React.Fragment>
     )
   }

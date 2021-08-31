@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { store } from './redux/storeConfig/store';
 import Logo from '../src/assets/imgs/png/nav/logo.png';
 import 'bootstrap/dist/css/bootstrap.css';
+import "react-toastify/dist/ReactToastify.css";
+
 
 const LazyApp = lazy(() => import('./App'));
 

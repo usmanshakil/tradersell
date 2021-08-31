@@ -2,10 +2,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"
-import backGroundImage1 from "../assets/imgs/png/newcars/2021-ford-edge_100761340_h.png";
-import backGroundImage2 from "../assets/imgs/png/newcars/wed.png";
-import backGroundImage3 from "../assets/imgs/png/newcars/download.png";
+import backGroundImage1 from "../assets/imgs/png/newcars/1.jpg";
+import backGroundImage2 from "../assets/imgs/png/newcars/2.jpg";
+import backGroundImage3 from "../assets/imgs/png/newcars/3.jpg";
 class NewCars extends Component {
 
     constructor(props) {
@@ -13,7 +12,7 @@ class NewCars extends Component {
         this.state = {
             newCars: [
                 {
-                    image: backGroundImage1,
+                    image: backGroundImage3,
                     title: "Lincoln Nautilus",
                     model: "2020",
                     manual: "Manual",
@@ -21,7 +20,7 @@ class NewCars extends Component {
                     power: "300 hp"
                 },
                 {
-                    image: backGroundImage1,
+                    image: backGroundImage2,
                     title: "Ford Rapter ",
                     model: "2020",
                     manual: "Manual",
@@ -36,20 +35,37 @@ class NewCars extends Component {
                     petorl: "Petrol",
                     power: "600 hp"
                 }
-            ]
+            ],
+            isMobile: null,
         }
+    }
+    componentDidMount() {
+        window.addEventListener('resize', () => {
+            this.setState({
+                isMobile: window.innerWidth < 1200
+            });
+        }, false);
+    }
+    componentWillUnmount() {
+        window.addEventListener('resize', () => {
+            this.setState({
+                isMobile: window.innerWidth < 768
+            });
+        }, false);
+
     }
     render() {
         return (
             <div className="new-cars-section">
-                <Container fluid >
+                <Container fluid>
+                    {/* <div className={this.state.isMobile ? "container" : "container-fluid"}   > */}
                     <Row className=" default-margin new-cars-container ">
                         {this.state.newCars.map((item, index) =>
                             <Col key={index} style={{ background: `linear-gradient(rgb(0 0 0 / 19%), rgb(0 0 0 / 48%)), url(${item.image})` }} className="new-car-card-full" lg={4} md={12} sm={12}>
                                 <span className="new-badge">New</span>
                                 <h1>{item.title}</h1>
                                 <span className="new-card-ul">
-                                    <span className="new-card-list-item border-right">{item.model}2020</span>
+                                    <span className="new-card-list-item border-first">{item.model}2020</span>
                                     <span className="new-card-list-item border-right">{item.manual}Manual</span>
                                     <span className="new-card-list-item border-right">{item.petorl}Pertol</span>
                                     <span className="new-card-list-item pl-2">{item.power}300 hp</span>
@@ -58,6 +74,7 @@ class NewCars extends Component {
                         )}
                     </Row>
                 </Container>
+                {/* </div> */}
             </div>
 
         )

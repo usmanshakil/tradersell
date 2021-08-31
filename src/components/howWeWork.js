@@ -15,7 +15,7 @@ class HowWeWork extends Component {
                     <Row>
                         <Col className="how-we-work-text-area" lg={12} md={12} sm={12}>
                             <h6>Helps you to find perfect car</h6>
-                            <h1>How We Work    </h1>
+                            <h1>How We <h1 className="d-inline trader-sell-text">Work  </h1>   </h1>
                         </Col>
                         <Col className="how-we-work-cards-area" lg={12} md={12} sm={12}>
                             <Row>

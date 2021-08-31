@@ -5,13 +5,17 @@ import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
 import TradeYourCarHero from '../../components/tradeYourCar hero/tradeYourCarHero';
 class TradeYourCar extends Component {
+  constructor(props) {
+    super(props)
+
+  }
   render() {
     console.log(this.props.vouched)
     return (
       <React.Fragment>
-        <TradeYourCarHero />
-        <GetRegistered />
-        <Footer />
+        <TradeYourCarHero {...this.props} />
+        <GetRegistered {...this.props} />
+        <Footer {...this.props} />
       </React.Fragment>
     )
   }

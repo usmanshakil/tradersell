@@ -257,6 +257,11 @@ flex:3
     justify-content: center;
     align-items: center;
 }
+.trader-sell-text{
+    color: #005CAA !important;
+} 
+
+
 @media (min-width: 1400px)
 {
   .welcome-section  .container-xxl, .welcome-section  .container-xl, .welcome-section  .container-lg,.welcome-section  .container-md,.welcome-section .container-sm, .welcome-section  .container {
@@ -412,8 +417,11 @@ font-size: 18px;
 color: white;
 font-size: 10px;
 margin-top: 20px;
-    padding-bottom: 37px;
+padding-bottom: 37px;
 text-decoration: underline;
+text-decoration-color: gray;
+text-underline-offset: 2px;
+text-decoration-thickness: 3px;
 }
 /* buy or sell ended  */
 
@@ -474,6 +482,11 @@ padding-top: 25px;
         border-right: 3px solid white;
         padding:0px 10px;  
  }
+  .border-first{
+        border-right: 1px solid white;
+        padding-left: 0px;
+        padding-right: 10px;
+ }
 /* new cars ended */
 
 
@@ -501,7 +514,7 @@ padding: 50px 10px;
 
 }
 .customer-review-message-container{ 
-clip-path: polygon(20% 0%, 100% 1%, 100% 83%, 85% 84%, 74% 100%, 75% 83%, 0 83%, 0 0);
+    clip-path: polygon(20% 0,100% 0%,100% 84%,85% 84%,74% 100%,75% 84%,0 84%,0 0);
     font-family: Merriweather;
     font-weight: 400;
     font-style: italic; 
@@ -793,7 +806,7 @@ font-size: 13px;
     font-family: Poppins;
  }
  .text-area p{
-          width: 295px;
+          width: 450px;
       font-size: 12px;
  }
  .margin-top-medium{
@@ -853,6 +866,16 @@ color: white  !important;
      margin-left: 5px;
     transition: .3s ease-in-out;
         font-family: Poppins;
+}
+.btn-start{
+    background-color:  #008BFF !important;
+text-decoration: none !important;
+color: white  !important; 
+    text-decoration: none;  
+     margin-left: 5px;
+    transition: .3s ease-in-out;
+        font-family: Poppins;
+    padding: 7px 35px !important;
 }
 .btn-next:hover{
 background-color:white !important;

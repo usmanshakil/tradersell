@@ -15,7 +15,7 @@ class Welcome extends Component {
                     <Row>
                         <Col className="welcome-text-container" lg={6} md={12} sm={12}>
                             <h6>Helps you to find your next car easily </h6>
-                            <h1>Welcome to Trader Sell</h1>
+                            <h1>Welcome to <h1 className="d-inline trader-sell-text">Trader Sell</h1></h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                                 when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
@@ -23,7 +23,7 @@ class Welcome extends Component {
                              scrambled  s</p>
                             <div className="welcome-footer-container">
                                 <span className="welcome-footer-box">
-                                    <img src={Logo1} className="" alt="logo2" />
+                                    <img src={Logo3} className="" alt="logo2" />
                                     <h2>we offers lower cars price</h2>
                                 </span>
                                 <span className="welcome-footer-box">
@@ -31,7 +31,7 @@ class Welcome extends Component {
                                     <h2>largest cars  dealership</h2>
                                 </span>
                                 <span className="welcome-footer-box">
-                                    <img src={Logo3} className="" alt="logo4" />
+                                    <img src={Logo1} className="" alt="logo4" />
                                     <h2>multipoint safety checks offers</h2>
                                 </span>
                             </div>

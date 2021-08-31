@@ -14,21 +14,21 @@ class NewsAndArticals extends Component {
                 {
                     image: Artical1,
                     title: "Top 10 most fuel-efficient cars  on the road 2019",
-                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.",
+                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ",
                     date: "25 Dec 2018",
                     postedBy: "By Admin"
                 },
                 {
                     image: Artical2,
                     title: "Top 10 most fuel-efficient cars  on the road 2019",
-                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.",
+                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ",
                     date: "25 Dec 2018",
                     postedBy: "By Admin"
                 },
                 {
                     image: Artical3,
                     title: "Top 10 most fuel-efficient cars  on the road 2019",
-                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore dolore magna.",
+                    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ",
                     date: "25 Dec 2018",
                     postedBy: "By Admin"
                 },
@@ -42,7 +42,10 @@ class NewsAndArticals extends Component {
                     <Row>
                         <Col className="how-we-work-text-area" lg={12} md={12} sm={12}>
                             <h6>Helps you to find perfect car</h6>
-                            <h1>News & Articles        </h1>
+                            <h1>
+                                News &
+                    <h1 className="d-inline trader-sell-text pl-2">Articles</h1>{" "}
+                            </h1>
                         </Col>
                         <Col className="  news-and-articals-section-cards-container " lg={12} md={12} sm={12}>
 
