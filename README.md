@@ -75,3 +75,36 @@ npm i --save redux react-redux
 npm i redux-thunk
 npm i redux-persist
 npm i redux-debounced
+
+
+
+
+Data {"drivetrain":{"step":6,"vin":"1","drivetrain":"1","engine":"1","year":"1","make":"11","model":"11","state":"1","city":"1","zipCode":"1","phone":"-1","odometer":"1","transmission":"1","trim":"1","fuel_type":"1","body_type":"1","condition":"used","exterior_color":"required1","primary_photo":"","additional_photos":"","vehicle_driving":"yes","transmission_issue":"yes","drivetrain_issue":"yes","steering_issue":"yes","brake_issue":"yes","suspension_issue":"yes","minor_body_damage":"yes","moderate_body_damage":"yes","major_body_damage":"yes","scratches":"yes","glass_damaged_cracked":"yes","lights_damaged_cracked":"yes","minor_body_rust":"yes","moderate_body_rust":"yes","major_body_rust":"yes","aftermarket_parts_exterior":"yes","mismatched_paint_colors":"yes","previous_paint_work":"yes","seat_damage":"yes","carpet_damage":"yes","dashboard_damage":"yes","interior_trim_damage":"yes","sunroof":"yes","navigation":"yes","aftermarket_stereo_equipment":"yes","hvac_not_working":"yes","leather_Or_Leather_type_seats":"yes","radius":"20","loading":false},"engine":"1","year":"1","make":"11","model":"11","state":"1","city":"1","zipCode":"1","phone":"-1"} {"odometer":"1","transmission":"1","trim":"1","fuel_type":"1","body_type":"1","condition":"used","exterior_color":"required1","primary_photo":"","additional_photos":""} {"vehicle_driving":"yes","transmission_issue":"yes","drivetrain_issue":"yes","steering_issue":"yes","brake_issue":"yes","suspension_issue":"yes"} {"minor_body_damage":"yes","moderate_body_damage":"yes","major_body_damage":"yes","scratches":"yes","glass_damaged_cracked":"yes","lights_damaged_cracked":"yes","minor_body_rust":"yes","moderate_body_rust":"yes","major_body_rust":"yes","aftermarket_parts_exterior":"yes","mismatched_paint_colors":"yes","previous_paint_work":"yes"} {"seat_damage":"yes","carpet_damage":"yes","dashboard_damage":"yes","interior_trim_damage":"yes","sunroof":"yes","navigation":"yes","aftermarket_stereo_equipment":"yes","hvac_not_working":"yes","leather_Or_Leather_type_seats":"yes"} {"make":"11","model":"11","radius":"20"}
+
+
+uplpoad 
+   handleImageChange(e) { 
+        console.log("enter")
+         e.preventDefault(); 
+      
+        var images= []
+        //  let files = Array.from(e.target.files); 
+        //    files.forEach((file) => {
+        //        images.push(file) 
+        //    }); 
+          this.setState({additional_photos:e.target.files})
+          console.log("iamges"+this.state.additional_photos)
+       }
+       handleUpload(){
+        var x = this.state.additional_photos.map((val) => {
+            return val.file;
+           });
+           var data;
+          for (let i = 0; i < x.length; i++) {
+        //    data.append('bannerImages[' + i + ']', x[i]);
+           data('bannerImages[' + i + ']', x[i]);
+
+          }
+          alert(data)
+        
+       }

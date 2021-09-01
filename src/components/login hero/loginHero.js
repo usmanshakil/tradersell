@@ -20,7 +20,7 @@ class LoginHero extends Component {
             loading: false
         }
     }
-
+ 
     resetForm = () => {
         this.setState({ email: "", password: "", loading: false })
     }
@@ -39,10 +39,11 @@ class LoginHero extends Component {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 1000,
                 });
+                this.setState({ loading: false })
                 this.props.history.push('/trade-your-car')
                 this.resetForm()
             }
-        } catch (error) {
+        } catch (error) { 
             toast.error("Network Error ", {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 1000,

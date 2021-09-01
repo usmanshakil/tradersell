@@ -20,7 +20,7 @@ get the most value from your current vehicle. </p>
                         <Col lg={8} md={12} sm={12}>
                             <Form className="login-hero-container margin-top-medium">
                                 <div className="d-flex justify-content-center algin-center mb-4">
-                                    <h1>Your Information</h1>
+                                    <h1 classname="your-info">Your Information</h1>
                                 </div>
                                 <Row className="   ">
                                     <Col lg={6} md={12} sm={12}>

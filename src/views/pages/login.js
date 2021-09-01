@@ -9,6 +9,9 @@ class Login extends Component {
     super(props)
 
   }
+  componentDidMount(){
+    window.scroll(0,0)
+  }
   render() {
     console.log(this.props.vouched)
     return (
