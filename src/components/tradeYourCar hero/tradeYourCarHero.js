@@ -18,7 +18,7 @@ class TradeYourCarHero extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            step: 2,
+            step: 1,
             // vin: "5UXKU2C54J0X48668",
             car_details_by_vin: null,
 
@@ -112,6 +112,32 @@ class TradeYourCarHero extends Component {
         e.preventDefault();
         this.setState({ step: this.state.step - 1 })
     } 
+ 
+//    handleImageChange(e) { 
+//         console.log("enter")
+//          e.preventDefault(); 
+      
+//         var images= []
+//         //  let files = Array.from(e.target.files); 
+//         //    files.forEach((file) => {
+//         //        images.push(file) 
+//         //    }); 
+//           this.setState({additional_photos:e.target.files})
+//           console.log("iamges"+this.state.additional_photos)
+//        }
+//        handleUpload(){
+//         var x = this.state.additional_photos.map((val) => {
+//             return val.file;
+//            });
+//            var data;
+//           for (let i = 0; i < x.length; i++) {
+//         //    data.append('bannerImages[' + i + ']', x[i]);
+//            data('bannerImages[' + i + ']', x[i]);
+
+//           }
+//           alert(data)
+        
+//        }
     handleFinalSubmit = (e) => { 
              // for (let i = 0; i < this.state.additional_photos.length; i++) {
         //     data.append('additional_photos[' + i + ']', this.state.additional_photos[i]);
