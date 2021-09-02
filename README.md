@@ -108,3 +108,152 @@ uplpoad
           alert(data)
         
        }
+
+        "homepage":"https://zeskuptech.com/tradersell/",
+
+
+        .preview-images-list{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .image-container{
+     position: relative;
+ }
+ .preview-images-list img{
+     max-width: 90px  !important;
+ }
+ .image-btn-close{
+     position: absolute;
+    background: black;
+    top: 1px;
+    right: 1px;
+    font-size: 13px;
+    /* padding: 2px; */
+    border-radius: 32px;
+    padding: 1px 5px;
+    cursor: pointer;
+ }
+ .image-container{
+     margin: 10px;
+ }
+
+
+    // for (let i = 0; i < this.state.additional_photos.length; i++) {
+        //     data.append('additional_photos[' + i + ']', this.state.additional_photos[i]);
+        //     alert(this.state.additional_photos[i])
+        //    } 
+        //    alert(JSON.stringify(dataobject2))
+
+
+   tempSubmit = (e) => {
+        e.preventDefault();
+        var FormData = require('form-data');
+        var data = new FormData();
+        // additional_photos
+
+        var temp_additional_photos = this.state.additional_photos.map((val) => {
+            return val.file;
+        }); 
+        for (let i = 0; i < temp_additional_photos.length; i++) {
+            data.append('additional_photos[' + i + ']', temp_additional_photos[i]);
+            alert(i)
+        }
+
+        // primary_photo
+
+        var temp_primary_photo = this.state.primary_photo.map((val) => {
+            return val.file;
+        }); 
+        for (let i = 0; i < temp_primary_photo.length; i++) {
+            if(this.state.primary_photo.length - 1 === i){
+                data.append('primary_photo[' + i + ']', temp_primary_photo[i]);
+            alert(i) 
+            } 
+        } 
+    }
+
+
+
+
+
+
+    submuit
+
+
+    
+        const dataobject1 = {
+            vehicle: this.state.vehicle,
+            drivetrain: this.state,
+            engine: this.state.drivetrain,
+            year: this.state.year,
+            make: this.state.make,
+            model: this.state.model,
+            state: this.state.state,
+            city: this.state.city,
+            zip: this.state.zip,
+            phone: this.state.phone,
+        }
+
+        const dataobject2 = {
+            odometer: this.state.odometer,
+            transmission: this.state.transmission,
+            trim: this.state.trim,
+            fuel_type: this.state.fuel_type,
+            body_type: this.state.body_type,
+            condition: this.state.condition,
+            exterior_color: this.state.exterior_color,
+            primary_photo: this.state.primary_photo,
+            additional_photos: this.state.additional_photos,
+        }
+        // alert(JSON.stringify(dataobject2))
+
+
+        const dataobject3 = {
+            vehicle_driving: this.state.vehicle_driving,
+            transmission_issue: this.state.transmission_issue,
+            drivetrain_issue: this.state.drivetrain_issue,
+            steering_issue: this.state.steering_issue,
+            brake_issue: this.state.brake_issue,
+            suspension_issue: this.state.suspension_issue,
+        }
+        // alert(JSON.stringify(dataobject3))
+
+        const dataobject4 = {
+            minor_body_damage: this.state.minor_body_damage,
+            moderate_body_damage: this.state.moderate_body_damage,
+            major_body_damage: this.state.major_body_damage,
+            scratches: this.state.scratches,
+            glass_damaged_cracked: this.state.glass_damaged_cracked,
+            lights_damaged_cracked: this.state.lights_damaged_cracked,
+            minor_body_rust: this.state.minor_body_rust,
+            moderate_body_rust: this.state.moderate_body_rust,
+            major_body_rust: this.state.major_body_rust,
+            aftermarket_parts_exterior: this.state.aftermarket_parts_exterior,
+            mismatched_paint_colors: this.state.mismatched_paint_colors,
+            previous_paint_work: this.state.previous_paint_work,
+        }
+        //         alert(JSON.stringify(dataobject4))
+
+
+
+        const dataobject5 = {
+            seat_damage: this.state.seat_damage,
+            carpet_damage: this.state.carpet_damage,
+            dashboard_damage: this.state.dashboard_damage,
+            interior_trim_damage: this.state.interior_trim_damage,
+            sunroof: this.state.sunroof,
+            navigation: this.state.navigation,
+            aftermarket_stereo_equipment: this.state.aftermarket_stereo_equipment,
+            hvac_not_working: this.state.hvac_not_working,
+            leather_Or_Leather_type_seats: this.state.leather_Or_Leather_type_seats,
+        }
+        //         alert(JSON.stringify(dataobject5))
+
+        const dataobject6 = {
+            make: this.state.make,
+            model: this.state.model,
+            radius: this.state.radius,
+
+        }
+        //   alert(JSON.stringify(dataobject6))
+        console.log("Data " + JSON.stringify(dataobject1), JSON.stringify(dataobject2), JSON.stringify(dataobject3), JSON.stringify(dataobject4), JSON.stringify(dataobject5), JSON.stringify(dataobject6))

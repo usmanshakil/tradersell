@@ -65,10 +65,10 @@ class NewCars extends Component {
                                 <span className="new-badge">New</span>
                                 <h1>{item.title}</h1>
                                 <span className="new-card-ul">
-                                    <span className="new-card-list-item border-first">{item.model}2020</span>
-                                    <span className="new-card-list-item border-right">{item.manual}Manual</span>
-                                    <span className="new-card-list-item border-right">{item.petorl}Pertol</span>
-                                    <span className="new-card-list-item pl-2">{item.power}300 hp</span>
+                                    <span className="new-card-list-item border-first">{item.model}</span>
+                                    <span className="new-card-list-item border-right">{item.manual}</span>
+                                    <span className="new-card-list-item border-right">{item.petorl}</span>
+                                    <span className="new-card-list-item pl-2">{item.power}</span>
                                 </span>
                             </Col>
                         )}

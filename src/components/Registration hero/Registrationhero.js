@@ -106,7 +106,7 @@ class RegistrationHero extends Component {
                                 <Form.Group className="mb-3  " controlId="cardOwner">
                                     <Form.Check
                                         value={this.state.user_type === "owner" ? true : false}
-                                        onChange={(e) => this.setState({ user_type: e.target.checked ? "owner" : "" })}
+                                        onChange={(e) => this.setState({ user_type: e.target.checked ? "Car Owner" : "" })}
                                         name="user_type"
                                         type="radio"
                                         className="ts-bbg-text-color"
@@ -115,7 +115,7 @@ class RegistrationHero extends Component {
 
                                     <Form.Check
                                         value={this.state.user_type === "dealer" ? true : false}
-                                        onChange={(e) => this.setState({ user_type: e.target.checked ? "dealer" : "" })}
+                                        onChange={(e) => this.setState({ user_type: e.target.checked ? "Car Dealer" : "" })}
                                         name="user_type"
                                         type="radio"
                                         className="ts-bbg-text-color"

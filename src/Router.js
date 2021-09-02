@@ -14,7 +14,7 @@ const SellYourCar = lazy(() => import('./views/pages/sellYourCar'));
 class AppRouter extends React.Component {
     render() {
         return (
-            <Router history={history}>
+            <Router basename={window.location.pathname || ''} history={history}>
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
