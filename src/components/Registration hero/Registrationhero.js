@@ -9,6 +9,7 @@ import axios from "axios"
 import APIConfig from '../../helpers/api/config';
 import { toast } from "react-toastify";
 class RegistrationHero extends Component {
+    _isMounted = false
     constructor(props) {
         super(props)
         this.state = {
@@ -73,11 +74,15 @@ class RegistrationHero extends Component {
         }
     }
     handleSubmit = async (e) => {
+        this._isMounted = true;
         e.preventDefault();
         if (this.validatePassword()) {
             this.setState({ loading: true })
             this.handleRegistration();
         }
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render() {
@@ -92,16 +97,19 @@ class RegistrationHero extends Component {
                                     <Link to="/"> <img className=" " src={Logo} alt="social1" /></Link>
                                 </div>
                                 <Form.Group className="mb-3" controlId="name">
-                                    <Form.Control value={this.state.name} onChange={(e) => this.setState({ name: e.target.value })} required name="name" className="ts-input" type="text" placeholder="  Name" />
+                                    <Form.Control value={this.state.name || ""} onChange={(e) => this.setState({ name: e.target.value })} required name="name" className="ts-input" type="text" placeholder="  Name" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="email">
-                                    <Form.Control value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} required name="email" className="ts-input" type="email" placeholder="User Name" />
+                                    <Form.Control value={this.state.email || ""} onChange={(e) => this.setState({ email: e.target.value })} required name="email" className="ts-input" type="email" placeholder="User Name" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="password">
-                                    <Form.Control value={this.state.password} onChange={(e) => this.setState({ password: e.target.value })} required name="password" className="ts-input" type="password" placeholder="Password" />
+                                    <Form.Control value={this.state.password || ""} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" onChange={(e) => this.setState({ password: e.target.value })} required name="password" className="ts-input" type="password" placeholder="Password" />
+                                    <Form.Text className="text-muted">
+                                        Minimum eight characters, at least one letter and one number
+    </Form.Text>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="confirmPassword">
-                                    <Form.Control value={this.state.confirmPassword} onChange={(e) => this.setState({ confirmPassword: e.target.value })} required onBlur={() => this.validatePassword()} name="confirmPassword" className="ts-input" type="password" placeholder="Confirm Password" />
+                                    <Form.Control value={this.state.confirmPassword || ""} onChange={(e) => this.setState({ confirmPassword: e.target.value })} required onBlur={() => this.validatePassword()} name="confirmPassword" className="ts-input" type="password" placeholder="Confirm Password" />
                                 </Form.Group>
                                 <Form.Group className="mb-3  " controlId="cardOwner">
                                     <Form.Check

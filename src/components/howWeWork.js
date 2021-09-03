@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Container, Row, Col } from "react-bootstrap"; 
 import Step1 from "../assets/imgs/png/howWeWorkSteps/1.png";
 import Step2 from "../assets/imgs/png/howWeWorkSteps/2.png";
 import Step3 from "../assets/imgs/png/howWeWorkSteps/3.png";
@@ -15,7 +14,7 @@ class HowWeWork extends Component {
                     <Row>
                         <Col className="how-we-work-text-area" lg={12} md={12} sm={12}>
                             <h6>Helps you to find perfect car</h6>
-                            <h1>How We <h1 className="d-inline trader-sell-text">Work  </h1>   </h1>
+                            <h1>How We <span className="d-inline trader-sell-text">Work  </span>   </h1>
                         </Col>
                         <Col className="how-we-work-cards-area" lg={12} md={12} sm={12}>
                             <Row>

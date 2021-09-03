@@ -4,15 +4,21 @@ import { connect } from 'react-redux';
 import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
 import SellYourCarHero from '../../components/sellYourCar hero/sellYourCarHero';
-class SellYourCar extends Component {
+class SellYourCar extends Component { 
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true
+    } 
+  }
   render() {
-    console.log(this.props.vouched)
-    return (
+  
+    return ( 
       <React.Fragment>
-        <SellYourCarHero />
-        <GetRegistered />
-        <Footer />
-      </React.Fragment>
+        <SellYourCarHero {...this.props} />
+        <GetRegistered {...this.props} />
+        <Footer {...this.props} />
+      </React.Fragment> 
     )
   }
 }

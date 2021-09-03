@@ -18,7 +18,7 @@ ReactDOM.render(
     <Suspense
       fallback={
         <div className="d-flex justify-content-center align-items-center loading-container"  >
-          <img src={Logo} className="loading-logo" />
+          <img src={Logo} className="loading-logo" alt="loader" />
         </div>
       }
     >

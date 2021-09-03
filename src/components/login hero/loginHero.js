@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 
 import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
 import NavBar from '../../views/_partials/navbar';
-import { Link, useHistory } from "react-router-dom"
+import { Link  } from "react-router-dom"
 import Logo from "../../assets/imgs/png/nav/logo.png"
 import axios from "axios"
 import APIConfig from '../../helpers/api/config';
 import { toast } from "react-toastify";
 
 class LoginHero extends Component {
+    _isMounted= false
     constructor(props) {
-        super(props)
-
+        super(props) 
         this.state = {
             email: "",
             password: "",
@@ -25,6 +25,7 @@ class LoginHero extends Component {
         this.setState({ email: "", password: "", loading: false })
     }
     handleLogin = async () => {
+        this._isMounted= false
         var FormData = require('form-data');
         var data = new FormData();
         data.append('email', this.state.email);
@@ -43,8 +44,8 @@ class LoginHero extends Component {
                 this.props.history.push('/trade-your-car')
                 this.resetForm()
             }
-        } catch (error) { 
-            toast.error("Network Error ", {
+        } catch (error) {  
+            toast.error("Failed please try again  ", {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 1000,
             });
@@ -57,7 +58,9 @@ class LoginHero extends Component {
         this.handleLogin();
         this.resetForm()
     }
-
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
 
     render() {
         return (
@@ -71,10 +74,11 @@ class LoginHero extends Component {
                                     <Link to="/"> <img className=" " src={Logo} alt="social1" /></Link>
                                 </div>
                                 <Form.Group className="mb-3" controlId="email">
-                                    <Form.Control value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} name="email" className="ts-input" required type="email" placeholder="User Name" />
+                                    <Form.Control value={this.state.email || ""} onChange={(e) => this.setState({ email: e.target.value })} name="email" className="ts-input" required type="email" placeholder="User Name" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="password">
-                                    <Form.Control value={this.state.password} onChange={(e) => this.setState({ password: e.target.value })} name="password" className="ts-input" required type="password" placeholder="Password" />
+                                    <Form.Control value={this.state.password || ""} onChange={(e) => this.setState({ password: e.target.value })} name="password" className="ts-input" required type="password" placeholder="Password" />
+                             
                                 </Form.Group>
                                 <Form.Group className="mb-3 d-flex justify-content-between" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" className="ts-bbg-text-color" label="Remember me" />

@@ -1,12 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"
-import Logo1 from "../assets/imgs/png/welcome/Component 2 – 1.png";
-import Logo2 from "../assets/imgs/png/welcome/Page-1.png";
-import Logo3 from "../assets/imgs/png/welcome/steering-wheel.png";
-import Boy from "../assets/imgs/png/welcome/boy.JPG";
+import { Container, Row, Col } from "react-bootstrap"; 
 class NewCars extends Component {
     render() {
         return (

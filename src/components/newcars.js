@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col } from "react-bootstrap";
-import backGroundImage1 from "../assets/imgs/png/newcars/1.jpg";
+import { Container, Row, Col } from "react-bootstrap"; 
 import backGroundImage2 from "../assets/imgs/png/newcars/2.jpg";
 import backGroundImage3 from "../assets/imgs/png/newcars/3.jpg";
 class NewCars extends Component {
@@ -39,21 +38,21 @@ class NewCars extends Component {
             isMobile: null,
         }
     }
-    componentDidMount() {
-        window.addEventListener('resize', () => {
-            this.setState({
-                isMobile: window.innerWidth < 1200
-            });
-        }, false);
-    }
-    componentWillUnmount() {
-        window.addEventListener('resize', () => {
-            this.setState({
-                isMobile: window.innerWidth < 768
-            });
-        }, false);
+    // componentDidMount() {
+    //     window.addEventListener('resize', () => {
+    //         this.setState({
+    //             isMobile: window.innerWidth < 1200
+    //         });
+    //     }, false);
+    // }
+    // componentWillUnmount() {
+    //     window.addEventListener('resize', () => {
+    //         this.setState({
+    //             isMobile: window.innerWidth < 768
+    //         });
+    //     }, false);
 
-    }
+    // }
     render() {
         return (
             <div className="new-cars-section">

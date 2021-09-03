@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col, Image } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Container, Row, Col, Image } from "react-bootstrap"; 
 import Customer from "../assets/imgs/png/newcars/2021-ford-edge_100761340_h.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -14,35 +13,40 @@ class CustomerReview extends Component {
             reviews: [
                 {
                     image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr,  consetetur sadipscing elitr,",
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
                     name: "Alexa  Cathy 1",
                     designation: "Customer"
                 },
                 {
                     image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr,  consetetur sadipscing elitr,",
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
                     name: "Alexa  Cathy 2",
                     designation: "Customer"
                 },
                 {
                     image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr,  consetetur sadipscing elitr,",
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
                     name: "Alexa  Cathy 3",
                     designation: "Customer"
                 },
                 {
                     image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr,  consetetur sadipscing elitr,",
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
                     name: "Alexa  Cathy 4",
                     designation: "Customer"
                 },
                 {
                     image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr,  consetetur sadipscing elitr,",
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
                     name: "Alexa  Cathy 5",
                     designation: "Customer"
                 },
-
+                {
+                    image: Customer,
+                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
+                    name: "Alexa  Cathy 6",
+                    designation: "Customer"
+                },
 
             ]
         }
@@ -70,7 +74,7 @@ class CustomerReview extends Component {
                 <Container>
                     <Row>
                         <Col className="how-we-work-text-area" lg={12} md={12} sm={12}>
-                            <h1>  Customer  <h1 className="d-inline trader-sell-text">Review  </h1>     </h1>
+                            <h1>  Customer  <span className="d-inline trader-sell-text">Review  </span>     </h1>
                         </Col>
                         <Col className="mt-5" lg={12} md={12} sm={12}>
                             <Row>
@@ -91,7 +95,7 @@ class CustomerReview extends Component {
                                     removeArrowOnDeviceType={["tablet", "mobile"]}
                                     deviceType={this.props.deviceType}
                                     dotListClass="custom-dot-list-style"
-                                    itemClass="carousel-item-padding-40-px"
+                                    itemClass="carousel-item-padding-40-px" 
                                 >
                                     {this.state.reviews?.map((item, index) =>
                                         <div key={index} className="customer-review-card customer-review-card-margin"  >

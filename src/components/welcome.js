@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Container, Row, Col } from "react-bootstrap"; 
 import Logo1 from "../assets/imgs/png/welcome/Component 2 – 1.png";
 import Logo2 from "../assets/imgs/png/welcome/Page-1.png";
 import Logo3 from "../assets/imgs/png/welcome/steering-wheel.png";
@@ -15,7 +14,7 @@ class Welcome extends Component {
                     <Row>
                         <Col className="welcome-text-container" lg={6} md={12} sm={12}>
                             <h6>Helps you to find your next car easily </h6>
-                            <h1>Welcome to <h1 className="d-inline trader-sell-text">Trader Sell</h1></h1>
+                            <h1>Welcome to <span className="d-inline trader-sell-text">Trader Sell</span></h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                                 when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 

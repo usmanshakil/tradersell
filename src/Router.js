@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import React, {   lazy } from 'react';
+import { BrowserRouter , Switch, Route  } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ToastContainer } from "react-toastify";
 import { history } from './helpers/history';
@@ -14,7 +14,7 @@ const SellYourCar = lazy(() => import('./views/pages/sellYourCar'));
 class AppRouter extends React.Component {
     render() {
         return (
-            <Router basename={window.location.pathname || ''} history={history}>
+            <BrowserRouter basename={window.location.pathname || ''} history={history}  >
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -34,7 +34,7 @@ class AppRouter extends React.Component {
                     <Route exact path="/trade-your-car" component={TradeYourCar} />
                     <Route exact path="/Sell-your-car" component={SellYourCar} />
                 </Switch>
-            </Router>
+            </BrowserRouter>
         );
     }
 }

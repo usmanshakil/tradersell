@@ -110,7 +110,7 @@ uplpoad
        }
 
         "homepage":"https://zeskuptech.com/tradersell/",
-
+  "homepage":"https://zeskuptech.com/tradersell/",
 
         .preview-images-list{
     display: flex;

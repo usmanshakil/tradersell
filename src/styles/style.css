@@ -927,12 +927,14 @@ font-size: 12px;
  .steps-row-image img{
              width: 100% !important;
  }
- .preview-images-list{
+ .preview-images-list{ 
+    display: flex;
     padding-top: 20px;
+    flex-wrap: wrap;
  }
  .image-container{
      position: relative; 
-     margin: 0px 5px 0px 0px;
+     margin: 6px 6px 0px 0px;
  }
  .preview-images-list img{
     max-width: 85px !important;
@@ -941,7 +943,7 @@ font-size: 12px;
  .image-btn-close{
      position: absolute;
     background: black;
-    top: -16px;
+    top: 1px;
     right: 1px;
     font-size: 13px;
     /* padding: 2px; */
@@ -1224,6 +1226,11 @@ font-size: 12px;
     font-size: 18px;
 }
 .main-nav-items a {
+    color: #fff!important;
+    margin-left: 13px!important;
+    transition: .5s ease-in-out;
+}
+.main-nav-items-span {
     color: #fff!important;
     margin-left: 13px!important;
     transition: .5s ease-in-out;

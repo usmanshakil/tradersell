@@ -6,14 +6,14 @@ import Footer from '../_partials/footer';
 
 import ContactUsHero from '../../components/contactushero/contactUsHero';
 class ContactUs extends Component {
-  render() {
-    console.log(this.props.vouched)
-    return (
+  
+  render() { 
+    return ( 
       <React.Fragment>
-        <ContactUsHero />
-        <GetRegistered />
-        <Footer />
-      </React.Fragment>
+        <ContactUsHero {...this.props} />
+        <GetRegistered {...this.props} />
+        <Footer {...this.props} />
+      </React.Fragment> 
     )
   }
 }

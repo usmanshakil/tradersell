@@ -1,22 +1,21 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Container, Row, Col, Form, Button, Image, FormControl, Spinner, Badge } from "react-bootstrap";
-import InputGroup from 'react-bootstrap/InputGroup'
-import * as Icon from 'react-feather';
+import { Container, Row, Col, Form, Button, Image, FormControl, Spinner   } from "react-bootstrap";
+import InputGroup from 'react-bootstrap/InputGroup' 
 import NavBar from '../../views/_partials/navbar';
 import Step1 from "../../assets/imgs/png/tradeSteps/1.png"
 import Step2 from "../../assets/imgs/png/tradeSteps/2.png"
 import Step3 from "../../assets/imgs/png/tradeSteps/3.png"
 import Step4 from "../../assets/imgs/png/tradeSteps/4.png"
 import Step5 from "../../assets/imgs/png/tradeSteps/5.png"
-import Step6 from "../../assets/imgs/png/tradeSteps/6.png"
-import Car from "../../assets/imgs/png/newcars/1.jpg"
+import Step6 from "../../assets/imgs/png/tradeSteps/6.png" 
 import APIConfig from '../../helpers/api/config';
 import { toast } from "react-toastify";
 import axios from "axios"
 import { validateSingleField } from '../../helpers/validation';
 class TradeYourCarHero extends Component {
+    _isMounted = false
     constructor(props) {
         super(props)
         this.state = {
@@ -55,8 +54,7 @@ class TradeYourCarHero extends Component {
             drivetrain_issue: '',
             steering_issue: '',
             brake_issue: '',
-            suspension_issue: '',
-            suspension_issue: '',
+            suspension_issue: '', 
 
             // Exterior 4
             minor_body_damage: '',
@@ -86,8 +84,8 @@ class TradeYourCarHero extends Component {
 
             // final info  6
 
-            make: '',
-            model: '',
+            // make: '',
+            // model: '', already define
             radius: '',
 
             loading: false,
@@ -115,7 +113,7 @@ class TradeYourCarHero extends Component {
         this.setState({ step: this.state.step - 1 })
     }
     handleDeletePhoto = (item, fileName) => {
-        if (fileName = "additional_photos") {
+        if (fileName === "additional_photos") {
             this.setState({
                 additional_photos: this.state.additional_photos.filter(function (val) {
                     return val.file !== item.file;
@@ -163,33 +161,35 @@ class TradeYourCarHero extends Component {
 
 
     handleFinalSubmit = async (e) => { 
+        
         e.preventDefault();   
+        this._isMounted = true;
         var FormData = require('form-data');
         var data = new FormData();
         this.setState({ loading: true })
+    
         // additional_photos
 
-        // var temp_additional_photos = this.state.additional_photos.map((val) => {
-        //     return val.file;
-        // }); 
-        // for (let i = 0; i < temp_additional_photos.length; i++) {
-        //     data.append('additional_photos[' + i + ']', temp_additional_photos[i]);
-        //     alert(i)
-        // }
+        var temp_additional_photos = this.state.additional_photos.map((val) => {
+            return val.file;
+        }); 
+        for (let i = 0; i < temp_additional_photos.length; i++) {
+            data.append('additional_photos[' + i + ']', temp_additional_photos[i]);
+           
+        }
 
-        // // primary_photo
+        // primary_photo
 
-        // var temp_primary_photo = this.state.primary_photo.map((val) => {
-        //     return val.file;
-        // }); 
-        // for (let i = 0; i < temp_primary_photo.length; i++) {
-        //     if(this.state.primary_photo.length - 1 === i){
-        //         data.append('primary_photo[' + i + ']', temp_primary_photo[i]);
-        //     alert(i) 
-        //     } 
-        // } 
-        
-        var data = new FormData();
+        var temp_primary_photo = this.state.primary_photo.map((val) => {
+            return val.file;
+        }); 
+        for (let i = 0; i < temp_primary_photo.length; i++) {
+            if(this.state.primary_photo.length - 1 === i){
+                data.append('primary_photo[' + i + ']', temp_primary_photo[i]);
+           
+            } 
+        } 
+         
         data.append('vin',this.state.vin);
         data.append('odometer',this.state.odometer);
         data.append('transmission',this.state.transmission);
@@ -247,15 +247,14 @@ class TradeYourCarHero extends Component {
                     autoClose: 1000,
                 });
                 this.setState({ loading: false })
-                // this.props.history.push('/trade-your-car')
+                  this.props.history.push('/')
                 // this.resetForm()
             }
         } catch (error) { 
             toast.error("Network Error ", {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 1000,
-            });
-            this.resetForm()
+            }); 
         }
        
         this.setState({ step: 1 })
@@ -263,6 +262,7 @@ class TradeYourCarHero extends Component {
 
     }
     getVINData = async () => {
+        this._isMounted = true;
         if (this.props.user?.isLogin) {
             if (validateSingleField(this.state.vin)) {
                 this.setState({ loading: true })
@@ -304,13 +304,16 @@ class TradeYourCarHero extends Component {
         } else {
             toast.warning("Please login before proceed .", {
                 position: toast.POSITION.TOP_RIGHT,
-                autoClose: 1800,
+                autoClose: 2400,
             });
             this.props.history.push("/login")
         }
 
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
     render() {
 
         return (
@@ -341,7 +344,7 @@ class TradeYourCarHero extends Component {
                                             <Col lg={6} md={12} sm={12}>
                                                 <InputGroup className="mb-3">
                                                     <FormControl
-                                                        type="text" id={"vin"} required value={"" || this.state.vin} onChange={(e) => this.setState({ vin: e.target.value })} name="vin" placeholder="  Vehicle VIN *  "
+                                                        type="text" id={"vin"} required value={"" || this.state.vin} onChange={(e) => this.setState({ vin: e.target.value })} onBlur={()=>this.getVINData()} name="vin" placeholder="  Vehicle VIN *  "
 
                                                         // aria-label="Recipient's username"
                                                         // aria-describedby="basic-addon2"
@@ -452,7 +455,7 @@ class TradeYourCarHero extends Component {
 
                                             <Col lg={6} md={12} sm={12}>
                                                 <Form.Group className="mb-3" controlId="Odometer">
-                                                    <Form.Control value={"" || this.state.odometer} className="ts-input" type="text" name="odometer" value={"" || this.state.odometer} onChange={(e) => this.setState({ odometer: e.target.value })} type="text" placeholder="Odometer  " />
+                                                    <Form.Control  className="ts-input" type="text" name="odometer" value={"" || this.state.odometer} onChange={(e) => this.setState({ odometer: e.target.value })} type="text" placeholder="Odometer  " />
                                                 </Form.Group>
 
                                             </Col>
@@ -614,7 +617,7 @@ class TradeYourCarHero extends Component {
                                             <Col lg={6} md={12} sm={12}>
 
                                                 <Form.Group className="mb-3" controlId="steering_issue">
-                                                    <Form.Select name="steering_issue" value={"" || this.state.steering_issue} onChange={(e) => this.setState({ steering_issue: e.target.value })} className="ts-input" defaultValue="Steering Issue* ">
+                                                    <Form.Select name="steering_issue" value={"" || this.state.steering_issue} onChange={(e) => this.setState({ steering_issue: e.target.value })} className="ts-input"  >
                                                         <option>Steering Issue</option>
                                                         <option value="yes">Yes</option>
                                                         <option value="no">No</option>
@@ -626,7 +629,7 @@ class TradeYourCarHero extends Component {
                                         <Row className="  ">
                                             <Col lg={6} md={12} sm={12}>
                                                 <Form.Group className="mb-3" controlId="brake_issue">
-                                                    <Form.Select name="brake_issue" value={"" || this.state.brake_issue} onChange={(e) => this.setState({ brake_issue: e.target.value })} className="ts-input" defaultValue="Brake Issue* ">
+                                                    <Form.Select name="brake_issue" value={"" || this.state.brake_issue} onChange={(e) => this.setState({ brake_issue: e.target.value })} className="ts-input" >
                                                         <option> Brake Issue</option>
                                                         <option value="yes">Yes</option>
                                                         <option value="no">No</option>
@@ -636,7 +639,7 @@ class TradeYourCarHero extends Component {
                                             <Col lg={6} md={12} sm={12}>
 
                                                 <Form.Group className="mb-3" controlId="suspension_issue">
-                                                    <Form.Select name="suspension_issue" value={"" || this.state.suspension_issue} onChange={(e) => this.setState({ suspension_issue: e.target.value })} className="ts-input" defaultValue="Suspension Issue  * ">
+                                                    <Form.Select name="suspension_issue" value={"" || this.state.suspension_issue} onChange={(e) => this.setState({ suspension_issue: e.target.value })} className="ts-input"  >
                                                         <option> Suspension Issue  </option>
                                                         <option value="yes">Yes</option>
                                                         <option value="no">No</option>

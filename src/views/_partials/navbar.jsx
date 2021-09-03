@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 // import Context from "../context/Context";
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import { Link } from "react-router-dom";
-import LOGO from "../../assets/imgs/png/nav/logo.png";
+import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Link } from "react-router-dom"; 
 // import Circle from "../assets/imgs/App Icon/JPG/circle.jpg";
 import { ReactComponent as Logo } from "../../assets/imgs/svgs/nav/1615889129-78426.svg";
 import * as Icon from 'react-feather';
@@ -71,7 +70,7 @@ class NavBar extends Component {
                                 <Link className="nav-link" to="/sell-your-car"> Sell Your Car</Link>
                                 <Link className="nav-link" to="/contactus"> Contact Us</Link>
                                 {this.props.user?.isLogin ?
-                                    <a className="nav-link" onClick={() => this.handleLogout()}> Logout</a>
+                                    <a     className="nav-link main-nav-items-span" onClick={() => this.handleLogout()}> Logout</a>
                                     :
                                     <React.Fragment>
                                         <Link className="nav-link" to="/login"> Login</Link>

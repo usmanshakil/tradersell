@@ -5,21 +5,24 @@ import LoginHero from "../../components/login hero/loginHero";
 import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
 class Login extends Component {
-  constructor(props) {
-    super(props)
-
-  }
+  _isMounted = false;
+  
   componentDidMount(){
+    this._isMounted = true; 
     window.scroll(0,0)
+ 
   }
-  render() {
-    console.log(this.props.vouched)
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+  render() { 
     return (
+       
       <React.Fragment>
         <LoginHero {...this.props} />
         <GetRegistered  {...this.props} />
         <Footer  {...this.props} />
-      </React.Fragment>
+      </React.Fragment> 
     )
   }
 }
