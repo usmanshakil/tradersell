@@ -26,14 +26,14 @@ class RegistrationHero extends Component {
     }
     handleRegistration = async () => {
         var FormData = require('form-data');
-        var data = new FormData();
+        var data = new FormData(); 
         data.append('name', this.state.name);
         data.append('email', this.state.email);
         data.append('password', this.state.password);
         data.append('user_type', this.state.user_type);
         try {
             const response = await axios(APIConfig('post', '/register', data));
-            if (response.status === 200) {
+            if (response.status === 200) { 
                 var reduxData = response.data.data
                 reduxData["isLogin"] = true
                 this.props.UserHandler(reduxData);
@@ -44,13 +44,14 @@ class RegistrationHero extends Component {
                 this.props.history.push('/trade-your-car')
                 this.resetForm()
             } else if (response.status === 300) {
+                
                 toast.warn("Email already Exist", {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 1500,
                 });
             }
 
-        } catch (error) {
+        } catch (error) { 
             toast.warn("Failed to create new user  ", {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 1500,
@@ -103,7 +104,9 @@ class RegistrationHero extends Component {
                                     <Form.Control value={this.state.email || ""} onChange={(e) => this.setState({ email: e.target.value })} required name="email" className="ts-input" type="email" placeholder="User Name" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="password">
-                                    <Form.Control value={this.state.password || ""} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" onChange={(e) => this.setState({ password: e.target.value })} required name="password" className="ts-input" type="password" placeholder="Password" />
+                                    <Form.Control value={this.state.password || ""}
+                                    //  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" 
+                                     onChange={(e) => this.setState({ password: e.target.value })} required name="password" className="ts-input" type="password" placeholder="Password" />
                                     <Form.Text className="text-muted">
                                         Minimum eight characters, at least one letter and one number
     </Form.Text>

@@ -108,10 +108,14 @@ uplpoad
           alert(data)
         
        }
+ 
+
 
         "homepage":"https://zeskuptech.com/tradersell/",
-  "homepage":"https://zeskuptech.com/tradersell/",
+  "homepage":"http://tradersell.zacharypellison.com/",
 
+http://192.168.18.58:8000/api
+LOCAL 
         .preview-images-list{
     display: flex;
     flex-wrap: wrap;

@@ -1,6 +1,6 @@
 {
   "name": "react-app",
-  
+  "homepage":"http://tradersell.zacharypellison.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
