@@ -141,6 +141,7 @@ height: 60px;
 .hero-section{ 
     background-image: url("../assets/imgs/png/hero/pexels-tyler-clemmensen-8376445-min.png");
     background-size: cover;
+    background-attachment: fixed;
 }
 .hero-text-container{
     display: flex;
@@ -753,11 +754,16 @@ font-size: 12px;
  }
  
 
-  
+
 .login-hero-section{ 
     background-image: url("../assets/imgs/png/login/loginJPG.jpg");
     background-size: cover;
     color: white;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+
 }
 .login-hero-container{
       padding: 70px 50px;  
@@ -801,6 +807,8 @@ font-size: 13px;
     background-image: url("../assets/imgs/png/login/registration.png");
     background-size: cover;
     color: white;
+    background-position: 8%;
+    background-attachment: fixed;
 }
  
  
@@ -822,6 +830,8 @@ font-size: 13px;
 .contact-hero-section{ 
     background-image: url("../assets/imgs/png/login/Contactusbg.png");
     background-size: cover;
+  background-position: 50% 30%;
+    background-attachment: fixed;
     color: white;
 }
   .text-area h2{
@@ -1018,7 +1028,7 @@ font-size: 12px;
 }
 .hero-text-container h1 {
     color: white;
-    font-size: 54px;
+    font-size: 50px;
     font-weight: 900;
     font-family: Josefin Sans;
 }
@@ -1063,7 +1073,7 @@ font-size: 12px;
 }
 .hero-text-container h1 {
     color: white;
-    font-size: 54px;
+    font-size: 50px;
     font-weight: 900;
     font-family: Josefin Sans;
 }
@@ -1120,7 +1130,7 @@ font-size: 12px;
 }
 .hero-text-container h1 {
     color: white;
-    font-size: 54px !important;
+    font-size: 50px !important;
     font-weight: 900;
     font-family: Josefin sans;
 }

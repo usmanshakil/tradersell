@@ -145,7 +145,6 @@ class RegistrationHero extends Component {
                                             <Spinner animation="grow" variant="dark" size="md" />
                                         </Button>}
                                 </div>
-
                             </Form>
                         </Col>
                     </Row>
