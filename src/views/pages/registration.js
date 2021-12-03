@@ -20,7 +20,7 @@ class Registration extends Component {
     return (
    
       <React.Fragment>
-        <Registrationhero  {...this.props} />
+        <Registrationhero isNavBar={true}   {...this.props} />
         <GetRegistered  {...this.props} />
         <Footer  {...this.props} />
       </React.Fragment> 

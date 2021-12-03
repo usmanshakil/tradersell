@@ -18,8 +18,9 @@ class Home extends Component {
     window.scroll(0,0)
  
   }
+ 
   componentWillUnmount() {
-    this._isMounted = false;
+    this._isMounted = false; 
   }
   render() { 
     return ( 
@@ -27,7 +28,7 @@ class Home extends Component {
         <Hero />
         <Welcome />
         <HowWeWork />
-        <BuyOrSell />
+        <BuyOrSell {...this.props} />
         <NewCars />
         <CustomerReview />
         {/* <NewsAndArticals /> */}

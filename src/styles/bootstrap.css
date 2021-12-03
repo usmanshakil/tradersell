@@ -3932,6 +3932,38 @@ tbody.collapse.show {
 .tab-content > .active {
   display: block;
 }
+.tab-content{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 283px);
+}
+/* .tab-content::-webkit-scrollbar {
+  display: none;
+} */
+/* .tab-content::-webkit-scrollbar {
+    background-image: linear-gradient(180deg, #D0368A 0%, #708AD4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+    border-radius: 100px;
+} */
+.dashboard-container .tab-content::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+  border-radius: 10px;
+
+}
+.dashboard-container .tab-content::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(20, 20, 20, 0.459);
+	border-radius: 10px;
+	background-color: rsgba(12, 12, 12, 0.37);
+}
+.dashboard-container .tab-content::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-image: linear-gradient(180deg, rgb(51, 48, 49) 0%, #181a2098 99%);
+}
 
 .navbar {
   position: relative;

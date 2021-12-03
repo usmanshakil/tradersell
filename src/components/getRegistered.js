@@ -11,7 +11,7 @@ class GetRegistered extends Component {
                     <Row>
                         <Col className="get-registered-container" lg={12} md={12} sm={12}>
                             <h1>Buy Sell Your Car Quickly & Easily with TraderSell      </h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            <p>You get the best trade-in value or the best offer selling your vehicle and dealer you want to do business with.
                                </p>
                             <Link to="/register">Get Registered</Link>
                         </Col>

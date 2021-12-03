@@ -31,7 +31,7 @@ class ContactUsHero extends Component {
     handleSubmit  = async (e) => {
         e.preventDefault()
         this.setState({ loading: true })
-        var FormData = require('form-data');
+        var FormData = requestAnimationFrame('form-data');
         var data = new FormData();
         data.append('first_name', this.state.first_name,);
         data.append('last_name', this.state.last_name);
@@ -60,7 +60,7 @@ class ContactUsHero extends Component {
     render() {
         return (
             <div className="contact-hero-section">
-                <NavBar />
+                <NavBar {...this.props} showSvg={true} />
                 <Container>
                     <Row className="d-flex justify-content-center align-items-center section-contact-t-b-padding">
                         <Col className="text-area p-3 mb-2" lg={12} md={12} sm={12}>
@@ -76,39 +76,39 @@ class ContactUsHero extends Component {
                                 <Row className="   ">
                                     <Col lg={6} md={12} sm={12}>
                                         <Form.Group className="mb-3" controlId="first_name">
-                                            <Form.Control require value={this.state.first_name || ""} name="first_name" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder="  First Name" />
+                                            <Form.Control required value={this.state.first_name || ""} name="first_name" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder="  First Name" />
                                         </Form.Group>
 
                                     </Col>
                                     <Col lg={6} md={12} sm={12}>
 
                                         <Form.Group className="mb-3" controlId="last_name">
-                                            <Form.Control require value={this.state.last_name || ""} name="last_name" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder=" Last Name" />
+                                            <Form.Control required value={this.state.last_name || ""} name="last_name" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder=" Last Name" />
                                         </Form.Group>
                                     </Col>
                                 </Row>
 
 
                                 <Form.Group className="mb-3" controlId="company">
-                                    <Form.Control require value={this.state.company || ""} name="company" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder="Company" />
+                                    <Form.Control required value={this.state.company || ""} name="company" onChange={(e) => this.handleChange(e)} className="ts-input" type="text" placeholder="Company" />
                                 </Form.Group>
 
                                 <Row className="  ">
                                     <Col lg={6} md={12} sm={12}>
                                         <Form.Group className="mb-3" controlId="email">
-                                            <Form.Control require value={this.state.email || ""} name="email" onChange={(e) => this.handleChange(e)} className="ts-input" type="email" placeholder="   Email" />
+                                            <Form.Control required value={this.state.email || ""} name="email" onChange={(e) => this.handleChange(e)} className="ts-input" type="email" placeholder="   Email" />
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6} md={12} sm={12}>
 
                                         <Form.Group className="mb-3" controlId="phone_number">
-                                            <Form.Control value={this.state.phone_number || ""} name="phone_number" onChange={(e) => this.handleChange(e)} className="ts-input" type="number" placeholder="   Phone Number" />
+                                            <Form.Control required value={this.state.phone_number || ""} name="phone_number" onChange={(e) => this.handleChange(e)} className="ts-input" type="number" placeholder="   Phone Number" />
                                         </Form.Group>
                                     </Col>
                                 </Row>
 
                                 <Form.Group className="mb-3" controlId="message">
-                                    <Form.Control require className="ts-input" rows="4" cols="50" as="textarea"
+                                    <Form.Control required className="ts-input" rows="4" cols="50" as="textarea"
                                         value={this.state.message || ""} name="message" onChange={(e) => this.handleChange(e)}
                                         style={{ height: '100px' }} type="text" placeholder="    Message  " />
                                 </Form.Group>

@@ -15,11 +15,9 @@ class Welcome extends Component {
                         <Col className="welcome-text-container" lg={6} md={12} sm={12}>
                             <h6>Helps you to find your next car easily </h6>
                             <h1>Welcome to <span className="d-inline trader-sell-text">Trader Sell</span></h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            <p>Whether your trading-in or selling let us help you get the most value from your current vehicle. Our unique process puts you in control and allows you to get competitive quotes from a variety of dealers. You select the geographical location that you want to do business in. Receive the best quote without even going to the showroom. </p>
 
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                             scrambled  s</p>
+                            <p>You get the best trade-in value or the best offer selling your vehicle and dealer you want to do business with.</p>
                             <div className="welcome-footer-container">
                                 <span className="welcome-footer-box">
                                     <img src={Logo3} className="" alt="logo2" />

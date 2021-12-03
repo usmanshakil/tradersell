@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import GetRegistered from '../../components/getRegistered';
 import Footer from '../_partials/footer';
-
 import ContactUsHero from '../../components/contactushero/contactUsHero';
 class ContactUs extends Component {
   

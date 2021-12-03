@@ -9,7 +9,7 @@ class Hero extends Component {
     render() {
         return (
             <div className="hero-section">
-                <NavBar />
+                <NavBar {...this.props} />
                 <Container>
                     <Row>
                         <Col className="hero-text-container" lg={5} md={7} sm={12}>

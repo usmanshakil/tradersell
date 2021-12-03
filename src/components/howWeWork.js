@@ -20,23 +20,23 @@ class HowWeWork extends Component {
                             <Row>
                                 <Col className="how-we-work-card" lg={3} md={6} sm={12}>
                                     <img src={Step1} alt="how-itwork" />
-                                    <h1>Search Our Inventory</h1>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
+                                    <h1>Search In the Acution</h1>
+                                    <p>Search In the acution section. which is in the dashboard area you can access by siging up</p>
                                 </Col>
                                 <Col className="how-we-work-card" lg={3} md={6} sm={12}>
                                     <img src={Step2} alt="how-itwork" />
                                     <h1>Choose The Car You Like    </h1>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
+                                    <p>In the Acution section,go to live auction, and choose your vechile what you want to buy</p>
                                 </Col>
                                 <Col className="how-we-work-card" lg={3} md={6} sm={12}>
                                     <img src={Step3} alt="how-itwork" />
-                                    <h1>Apply For Auto Finance    </h1>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
+                                    <h1>Bid in Auction   </h1>
+                                    <p>Bid for vechile.Bid result will be announce after 24 hours of acution ended , </p>
                                 </Col>
                                 <Col className="how-we-work-card" lg={3} md={6} sm={12}>
                                     <img src={Step4} alt="how-itwork" />
                                     <h1>Get Approved & Drive    </h1>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
+                                    <p>Vechile owner and admin approval you can win the auction and enjoy drive </p>
                                 </Col>
                             </Row>
                         </Col>

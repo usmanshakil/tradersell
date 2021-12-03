@@ -19,7 +19,7 @@ class Login extends Component {
     return (
        
       <React.Fragment>
-        <LoginHero {...this.props} />
+        <LoginHero  isNavBar={true} {...this.props} />
         <GetRegistered  {...this.props} />
         <Footer  {...this.props} />
       </React.Fragment> 

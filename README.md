@@ -69,29 +69,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-
 npm i --save redux react-redux
 npm i redux-thunk
 npm i redux-persist
 npm i redux-debounced
-
-
-
+"homepage": "http://tradersell.zacharypellison.com/",
 
 Data {"drivetrain":{"step":6,"vin":"1","drivetrain":"1","engine":"1","year":"1","make":"11","model":"11","state":"1","city":"1","zipCode":"1","phone":"-1","odometer":"1","transmission":"1","trim":"1","fuel_type":"1","body_type":"1","condition":"used","exterior_color":"required1","primary_photo":"","additional_photos":"","vehicle_driving":"yes","transmission_issue":"yes","drivetrain_issue":"yes","steering_issue":"yes","brake_issue":"yes","suspension_issue":"yes","minor_body_damage":"yes","moderate_body_damage":"yes","major_body_damage":"yes","scratches":"yes","glass_damaged_cracked":"yes","lights_damaged_cracked":"yes","minor_body_rust":"yes","moderate_body_rust":"yes","major_body_rust":"yes","aftermarket_parts_exterior":"yes","mismatched_paint_colors":"yes","previous_paint_work":"yes","seat_damage":"yes","carpet_damage":"yes","dashboard_damage":"yes","interior_trim_damage":"yes","sunroof":"yes","navigation":"yes","aftermarket_stereo_equipment":"yes","hvac_not_working":"yes","leather_Or_Leather_type_seats":"yes","radius":"20","loading":false},"engine":"1","year":"1","make":"11","model":"11","state":"1","city":"1","zipCode":"1","phone":"-1"} {"odometer":"1","transmission":"1","trim":"1","fuel_type":"1","body_type":"1","condition":"used","exterior_color":"required1","primary_photo":"","additional_photos":""} {"vehicle_driving":"yes","transmission_issue":"yes","drivetrain_issue":"yes","steering_issue":"yes","brake_issue":"yes","suspension_issue":"yes"} {"minor_body_damage":"yes","moderate_body_damage":"yes","major_body_damage":"yes","scratches":"yes","glass_damaged_cracked":"yes","lights_damaged_cracked":"yes","minor_body_rust":"yes","moderate_body_rust":"yes","major_body_rust":"yes","aftermarket_parts_exterior":"yes","mismatched_paint_colors":"yes","previous_paint_work":"yes"} {"seat_damage":"yes","carpet_damage":"yes","dashboard_damage":"yes","interior_trim_damage":"yes","sunroof":"yes","navigation":"yes","aftermarket_stereo_equipment":"yes","hvac_not_working":"yes","leather_Or_Leather_type_seats":"yes"} {"make":"11","model":"11","radius":"20"}
 
+uplpoad
+handleImageChange(e) {
+console.log("enter")
+e.preventDefault();
 
-uplpoad 
-   handleImageChange(e) { 
-        console.log("enter")
-         e.preventDefault(); 
-      
         var images= []
-        //  let files = Array.from(e.target.files); 
+        //  let files = Array.from(e.target.files);
         //    files.forEach((file) => {
-        //        images.push(file) 
-        //    }); 
+        //        images.push(file)
+        //    });
           this.setState({additional_photos:e.target.files})
           console.log("iamges"+this.state.additional_photos)
        }
@@ -106,58 +101,114 @@ uplpoad
 
           }
           alert(data)
-        
+
        }
+
+live :
+
+React_App_BASE_URL=http://unfilteredfreedom.com/api/public/api
+React_App_ACCESS_TOKEN=asdljipwiasdlkgsdogjr
+React_App_BASE_URL_IMAGE=https://unfilteredfreedom.com/api/public
+
+
+
+local:
+
+React_App_BASE_URL=http://192.168.18.58:8000/api
+React_App_ACCESS_TOKEN=asdljipwiasdlkgsdogjr
+React_App_BASE_URL_IMAGE=http://192.168.18.58:8000
+
+1 add image for owner ke image -- stuatus -> done
+2 alert of update password -- stuatus -> done
+3 draft -- stuatus -> done
+4 auction ended main accept or reject after admin approval -- stuatus -> done
+5 messaging -> emails and backend approval -- stuatus -> pending
+6 location radius base filter -- stuatus -> pending
+7 filteration in auction ended -- stuatus -> pending
+8 Images issue from server side -- stuatus -> pending
+9 dealer image is not updating -- stuatus -> done
+
+  
+ 
+ajj bidding waly status, auction end main accpet aur reject wali API's kar le hy , won, lost, applied k filtleration behe ho gae hy
  
 
 
+
+1 : We have to set last message time and message
+in:
+ `/messaging_conversation/${this.props.user?.id}/owner`,
+`/messaging_conversation/${this.props.user?.id}/dealer`, status -> Pending  
+
+2 : This in these end tpoint we need to add end time of auction ended
+in : 
+`/trade_your_car_list`
+`sell_your_car_list`                            status -> done 
+
+3 : logout - > session clear                    status -> done
+
+4 messaging -> emails and backend approval -- stuatus -> pending
+5 location radius base filter -- stuatus -> pending
+6 filteration in auction ended -- stuatus -> pending
+7 Images issue from server side -- stuatus -> pending
+8 Mileage field is missing  -- status -> pending
+9 Status does not udpate from draft to publish i-e view acution
+    `/trade_your_car_list`
+    `/sell_your_car_list`  
+10 
+  
+
+
+  
+
         "homepage":"https://zeskuptech.com/tradersell/",
-  "homepage":"http://tradersell.zacharypellison.com/",
+
+"homepage":"http://tradersell.zacharypellison.com/",
 
 http://192.168.18.58:8000/api
-LOCAL 
-        .preview-images-list{
-    display: flex;
-    flex-wrap: wrap;
- }
- .image-container{
-     position: relative;
- }
- .preview-images-list img{
-     max-width: 90px  !important;
- }
- .image-btn-close{
-     position: absolute;
-    background: black;
-    top: 1px;
-    right: 1px;
-    font-size: 13px;
-    /* padding: 2px; */
-    border-radius: 32px;
-    padding: 1px 5px;
-    cursor: pointer;
- }
- .image-container{
-     margin: 10px;
- }
+LOCAL
 
+LIVE :http://tradersellapi.zacharypellison.com/public/api
+.preview-images-list{
+display: flex;
+flex-wrap: wrap;
+}
+.image-container{
+position: relative;
+}
+.preview-images-list img{
+max-width: 90px !important;
+}
+.image-btn-close{
+position: absolute;
+background: black;
+top: 1px;
+right: 1px;
+font-size: 13px;
+/_ padding: 2px; _/
+border-radius: 32px;
+padding: 1px 5px;
+cursor: pointer;
+}
+.image-container{
+margin: 10px;
+}
 
     // for (let i = 0; i < this.state.additional_photos.length; i++) {
         //     data.append('additional_photos[' + i + ']', this.state.additional_photos[i]);
         //     alert(this.state.additional_photos[i])
-        //    } 
+        //    }
         //    alert(JSON.stringify(dataobject2))
 
-
-   tempSubmit = (e) => {
-        e.preventDefault();
-        var FormData = require('form-data');
-        var data = new FormData();
-        // additional_photos
+tempSubmit = (e) => {
+e.preventDefault();
+var FormData = require('form-data');
+var data = new FormData();
+// additional_photos
 
         var temp_additional_photos = this.state.additional_photos.map((val) => {
             return val.file;
-        }); 
+        });
         for (let i = 0; i < temp_additional_photos.length; i++) {
             data.append('additional_photos[' + i + ']', temp_additional_photos[i]);
             alert(i)
@@ -167,13 +218,13 @@ LOCAL
 
         var temp_primary_photo = this.state.primary_photo.map((val) => {
             return val.file;
-        }); 
+        });
         for (let i = 0; i < temp_primary_photo.length; i++) {
             if(this.state.primary_photo.length - 1 === i){
                 data.append('primary_photo[' + i + ']', temp_primary_photo[i]);
-            alert(i) 
-            } 
-        } 
+            alert(i)
+            }
+        }
     }
 
 
@@ -184,7 +235,7 @@ LOCAL
     submuit
 
 
-    
+
         const dataobject1 = {
             vehicle: this.state.vehicle,
             drivetrain: this.state,
@@ -261,3 +312,11 @@ LOCAL
         }
         //   alert(JSON.stringify(dataobject6))
         console.log("Data " + JSON.stringify(dataobject1), JSON.stringify(dataobject2), JSON.stringify(dataobject3), JSON.stringify(dataobject4), JSON.stringify(dataobject5), JSON.stringify(dataobject6))
+
+
+ live : 
+ 
+ React_App_BASE_URL=http://unfilteredfreedom.com/api/public/api
+React_App_ACCESS_TOKEN=asdljipwiasdlkgsdogjr
+React_App_BASE_URL_IMAGE=https://unfilteredfreedom.com/api/public
+

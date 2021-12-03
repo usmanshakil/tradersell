@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Container, Row, Col, Image } from "react-bootstrap"; 
 import Customer from "../assets/imgs/png/newcars/2021-ford-edge_100761340_h.png";
+import Customer1 from "../assets/imgs/png/customers/1.jpg";
+import Customer2 from "../assets/imgs/png/customers/2.jpg";
+import Customer3 from "../assets/imgs/png/customers/3.jpg";
+import Customer4 from "../assets/imgs/png/customers/4.jpg";
+import Customer5 from "../assets/imgs/png/customers/5.jpg";
+import Customer6 from "../assets/imgs/png/customers/6.jpg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -12,39 +18,39 @@ class CustomerReview extends Component {
         this.state = {
             reviews: [
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 1",
+                    image: Customer1,
+                    message: "Tenetur laborum enim in et id consectetur est ratione ratione do inventore consequatur ad",
+                    name: "Virginia Robertson",
                     designation: "Customer"
                 },
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 2",
+                    image: Customer2,
+                    message: "Consequatur aut quasi fuga Repellendus Minima culpa autem dolor voluptate sapiente vel placeat fugiat",
+                    name: "Destiny Anderson",
                     designation: "Customer"
                 },
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 3",
+                    image: Customer3,
+                    message: "Eiusmod voluptate magnam omnis eiusmod libero mollitia in Nam esse rerum non fugiat voluptatem exercitation sint est qui",
+                    name: "Walter Merrill",
                     designation: "Customer"
                 },
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 4",
+                    image: Customer4,
+                    message: "Quo labore dolore ratione quis dolorem recusandae Esse aliquip dolore perferendis corrupti sint aut",
+                    name: "Ronan Serrano",
                     designation: "Customer"
                 },
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 5",
+                    image: Customer5,
+                    message: "Aute ea sit facere eum reprehenderit quas dolores consectetur eos quasi laborum Vitae",
+                    name: "Yuli Kramer",
                     designation: "Customer"
                 },
                 {
-                    image: Customer,
-                    message: "Lorem ipsum amet, consetetur sadipscing elitr,  consetetur sadipscing elitr,  consetetur sdolor sit amet, consetetur  Lorem ipsum dolor sit adipscing elitr,  consetetur sadipscing elitr.",
-                    name: "Alexa  Cathy 6",
+                    image: Customer6,
+                    message: "Accusamus quia est nemo veniam voluptatem quam assumenda quis nostrud officiis vel eius dolorem aliqua",
+                    name: "Chelsea Stewart",
                     designation: "Customer"
                 },
 
